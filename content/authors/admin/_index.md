@@ -1,13 +1,13 @@
 ---
 # Display name
-title: Alex Johnson
+title: Chiyuan Wang
 
 # Name pronunciation (optional)
 name_pronunciation: ''
 
 # Full name (for SEO)
-first_name: Alex
-last_name: Johnson
+first_name: Chiyuan
+last_name: Wang
 
 # Pronouns (optional)
 pronouns: he/him
@@ -23,80 +23,63 @@ superuser: true
 highlight_name: true
 
 # Role/position/tagline
-role: Senior AI Research Scientist
+role: PhD Student
 
 # Organizations/Affiliations to display in Biography blox
 organizations:
-  - name: Meta AI
-    url: https://ai.meta.com/
+  - name: School of Computer Science, Peking University
+    url: https://cs.pku.edu.cn/
 
 # Social network links
 # Need to use another icon? Simply download the SVG icon to your `assets/media/icons/` folder.
 profiles:
   - icon: at-symbol
-    url: 'mailto:alex.johnson@meta.com'
+    url: 'mailto:wang2021@stu.pku.edu.cn'
     label: E-mail Me
-  - icon: brands/x
-    url: https://twitter.com/AlexAIResearch
+  #- icon: brands/x
+  #  url: https://twitter.com/AlexAIResearch
   - icon: brands/github
-    url: https://github.com/alexjohnsonai
-  - icon: brands/linkedin
-    url: https://www.linkedin.com/in/alexjohnsonai/
-  - icon: academicons/google-scholar
-    url: https://scholar.google.com/citations?user=alexjohnson
-  - icon: academicons/orcid
-    url: https://orcid.org/0000-0002-1825-0097
+    url: https://github.com/leafDancer
+  #- icon: brands/linkedin
+  #  url: https://www.linkedin.com/in/alexjohnsonai/
+  #- icon: academicons/google-scholar
+  #  url: https://scholar.google.com/citations?user=alexjohnson
+  #- icon: academicons/orcid
+  #  url: https://orcid.org/0000-0002-1825-0097
 
 interests:
+  - Multi-agent Reinforcement Learning
+  - Computational Economics
   - Large Language Models
-  - Computer Vision
-  - Reinforcement Learning
-  - AI Ethics
+  - Alignment
 
 education:
-  - area: PhD Computer Science (AI Focus)
-    institution: Stanford University
-    date_start: 2015-09-01
-    date_end: 2019-06-30
+  - area: PhD Computer Science 
+    institution: Peking University
+    date_start: 2025-09-01
+    date_end: 2030-06-30
     summary: |
-      Thesis on _Scaling Laws for Neural Language Models_. Supervised by Prof. Andrew Ng. Published 5 papers in NeurIPS and ICML, with 2 best paper awards.
-    button:
-      text: 'Read Thesis'
-      url: 'https://example.com/thesis.pdf'
-  - area: MS Computer Science
-    institution: Carnegie Mellon University
-    date_start: 2013-09-01
-    date_end: 2015-05-31
-    summary: |
-      GPA: 4.0/4.0
+      Thesis on _Scaling Laws for Neural Language Models_. Supervised by Prof. Xiaotie Deng. Co-advised by A.P. Bo Li and Yaodong Yang.
+    #button:
+    #  text: 'Read Thesis'
+    #  url: 'https://example.com/thesis.pdf'
 
-      Specialized in machine learning and robotics.
-  - area: BS Computer Science
-    institution: MIT
-    date_start: 2009-09-01
-    date_end: 2013-05-31
+  - area: BS Data Science
+    institution: Peking University
+    date_start: 2021-09-01
+    date_end: 2025-06-30
     summary: |
-      GPA: 3.9/4.0
-
-      Minored in Mathematics. President of AI Club.
+      GPA: 3.4/4.0
 
 work:
-  - position: Senior AI Research Scientist
-    company_name: Meta AI
-    company_url: 'https://ai.meta.com/'
+  - position: Social Intelligence Research Intern
+    company_name: BIGAI
+    company_url: 'https://www.bigai.ai/'
     company_logo: ''
-    date_start: 2020-01-01
+    date_start: 2025-9-25
     date_end: ''
     summary: |2-
       Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
-  - position: AI Research Intern
-    company_name: OpenAI
-    company_url: 'https://openai.com/'
-    company_logo: ''
-    date_start: 2019-06-01
-    date_end: 2019-12-31
-    summary: |
-      Worked on GPT-3 scaling. Co-authored paper on prompt engineering.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
@@ -134,9 +117,9 @@ skills:
 
 languages:
   - name: English
-    percent: 100
-  - name: Spanish
     percent: 50
+  - name: Chinese
+    percent: 100
 
 # Awards.
 #   Add/remove as many awards below as you like.
