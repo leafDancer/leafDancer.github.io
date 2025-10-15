@@ -59,7 +59,7 @@ education:
     date_start: 2025-09-01
     date_end: ''
     summary: |
-      Study at Center on Frontiers of Computing Studies(CFCS), Peking University. Supervised by Prof. Xiaotie Deng. Co-advised by Prof. Bo Li and Yaodong Yang.
+      Study at Center on Frontiers of Computing Studies(CFCS). Supervised by Prof. Xiaotie Deng. Co-advised by Prof. Bo Li and Yaodong Yang.
     #button:
     #  text: 'Read Thesis'
     #  url: 'https://example.com/thesis.pdf'
@@ -79,7 +79,7 @@ work:
     date_start: 2025-09-25
     date_end: ''
     summary: |2-
-      Participated in the development of the economic module for a large-scale social simulator, exploring LLM-based approaches for constructing economic systems.
+      Exploring novel approaches for constructing economic systems.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
