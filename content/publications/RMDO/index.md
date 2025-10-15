@@ -7,7 +7,7 @@ authors:
 - Ilija Bogunovic
 - Stephen McAleer
 - Yaodong Yang
-date: "2024-11-01"
+date: 2024-11-01
 
 # Schedule page publish date (NOT publication's date).
 publishDate: "2024-11-01"
