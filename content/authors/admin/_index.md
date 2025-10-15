@@ -69,7 +69,7 @@ education:
     date_start: 2021-09-01
     date_end: 2025-06-30
     summary: |
-      Studied at Yuanpei College, Peking University. GPA: 3.4/4.0
+      Graduated from Yuanpei College, Peking University. GPA: 3.4/4.0
 
 work:
   - position: Social Intelligence Research Intern
