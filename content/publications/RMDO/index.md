@@ -1,8 +1,8 @@
 ---
 title: "Sample-Efficient Regret-Minimizing Double Oracle in Extensive-Form Games"
 authors:
-- Xiaohang Tang
 - admin
+- Xiaohang Tang
 - Chengdong Ma
 - Ilija Bogunovic
 - Stephen McAleer
@@ -24,10 +24,13 @@ publication_short: ""
 abstract: Extensive-Form Game (EFG) represents a fundamental model for analyzing sequential interactions among multiple agents and the primary challenge to solve it lies in mitigating sample complexity. Existing research indicated that Double Oracle (DO) can reduce the sample complexity dependence on the information set number  to the final restricted game size  in solving EFG. This is attributed to the early convergence of full-game Nash Equilibrium (NE) through iteratively solving restricted games. However, we prove that the state-of-the-art Extensive-Form Double Oracle (XDO) exhibits \textit{exponential} sample complexity of , due to its exponentially increasing restricted game expansion frequency. Here we introduce Adaptive Double Oracle (AdaDO) to significantly alleviate sample complexity to \textit{polynomial} by deploying the optimal expansion frequency. Furthermore, to comprehensively study the principles and influencing factors underlying sample complexity, we introduce a novel theoretical framework Regret-Minimizing Double Oracle (RMDO) to provide directions for designing efficient DO algorithms. Empirical results demonstrate that AdaDO attains the more superior approximation of NE with less sample complexity than the strong baselines including Linear CFR, MCCFR and existing DO. Importantly, combining RMDO with warm starting and stochastic regret minimization further improves convergence rate and scalability, thereby paving the way for addressing complex multi-agent tasks.
 
 # Summary. An optional shortened abstract.
-summary: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Duis posuere tellus ac convallis placerat. Proin tincidunt magna sed ex sollicitudin condimentum.
+summary: A highly efficient and theoretically guaranteed algorithm framework for solving two-player zero-sum games.
 
 tags:
 - Game Theory
+- Regret Minimization
+- Double Oracle
+- Nash Equilibrium
 
 featured: true
 
