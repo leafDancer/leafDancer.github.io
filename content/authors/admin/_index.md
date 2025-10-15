@@ -86,7 +86,7 @@ work:
 skills:
   - name: Technical Skills
     items:
-      - name: Python & PyTorch
+      - name: Python
         description: ''
         percent: 95
         icon: code-bracket
@@ -149,4 +149,4 @@ awards:
       Recognized for contributions to scaling laws in deep learning.
 ---
 
-Alex Johnson is a Senior AI Research Scientist at Meta AI, where he leads groundbreaking work on large language models and multimodal systems. His research has been published in top conferences like NeurIPS and ICML, with over 10,000 citations. Alex is passionate about pushing the boundaries of AI while ensuring ethical development. Outside of work, he enjoys hiking in the Rockies, building custom PCs, and mentoring the next generation of AI talent.
+Chiyuan Wang is a Ph.D. student at the School of Computer Science, Peking University. His research interests include multi-agent systems, computational economics, and algorithmic game theory. He is supervised by Xiaotie Deng, a Chair Professor at the Center on Frontiers of Computing Studies (CFCS) of Peking University, and is jointly co-advised by Professor Bo Li and Yaodong Yang. He is dedicated to empowering AI for Science (AI4S), particularly AI for Economics (AI4E), through solid engineering practices.
