@@ -50,8 +50,8 @@ profiles:
 interests:
   - Multi-agent Reinforcement Learning
   - Computational Economics
-  - Large Language Models
-  - Alignment
+  - Game Theory
+  - RLHF
 
 education:
   - area: PhD Computer Science 
@@ -59,7 +59,7 @@ education:
     date_start: 2025-09-01
     date_end: 2030-06-30
     summary: |
-      Thesis on _Scaling Laws for Neural Language Models_. Supervised by Prof. Xiaotie Deng. Co-advised by A.P. Bo Li and Yaodong Yang.
+      Study at Center on Frontiers of Computing Studies(CFCS), Peking University. Supervised by Prof. Xiaotie Deng. Co-advised by Prof. Bo Li and Yaodong Yang.
     #button:
     #  text: 'Read Thesis'
     #  url: 'https://example.com/thesis.pdf'
@@ -69,7 +69,7 @@ education:
     date_start: 2021-09-01
     date_end: 2025-06-30
     summary: |
-      GPA: 3.4/4.0
+      Studied at Yuanpei College, Peking University. GPA: 3.4/4.0
 
 work:
   - position: Social Intelligence Research Intern
