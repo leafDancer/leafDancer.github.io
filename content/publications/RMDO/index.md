@@ -1,16 +1,16 @@
 ---
 title: "Sample-Efficient Regret-Minimizing Double Oracle in Extensive-Form Games"
 authors:
-- admin
 - Xiaohang Tang
+- admin
 - Chengdong Ma
 - Ilija Bogunovic
 - Stephen McAleer
 - Yaodong Yang
-date: "2024-11-01T00:00:00Z"
+date: "2024-11-01"
 
 # Schedule page publish date (NOT publication's date).
-publishDate: "2024-11-01T00:00:00Z"
+publishDate: "2024-11-01"
 
 # Publication type.
 # Accepts a single type but formatted as a YAML list (for Hugo requirements).
