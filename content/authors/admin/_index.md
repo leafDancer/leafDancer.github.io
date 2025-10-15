@@ -44,8 +44,8 @@ profiles:
   #  url: https://www.linkedin.com/in/alexjohnsonai/
   #- icon: academicons/google-scholar
   #  url: https://scholar.google.com/citations?user=alexjohnson
-  #- icon: academicons/orcid
-  #  url: https://orcid.org/0000-0002-1825-0097
+  - icon: academicons/orcid
+    url: https://orcid.org/0009-0007-5726-7151
 
 interests:
   - Multi-agent Reinforcement Learning
@@ -57,7 +57,7 @@ education:
   - area: PhD Computer Science 
     institution: Peking University
     date_start: 2025-09-01
-    date_end: 2030-06-30
+    date_end: ''
     summary: |
       Study at Center on Frontiers of Computing Studies(CFCS), Peking University. Supervised by Prof. Xiaotie Deng. Co-advised by Prof. Bo Li and Yaodong Yang.
     #button:
@@ -126,20 +126,20 @@ languages:
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
 awards:
-  - title: Best Paper Award
-    url: https://neurips.cc/
-    date: '2022-12-01'
-    awarder: NeurIPS
-    icon: hero/trophy
-    summary: |
-      Awarded for groundbreaking work on efficient training of large models.
-  - title: AI Innovation Grant
-    url: https://www.nsf.gov/
-    date: '2021-06-15'
-    awarder: National Science Foundation
-    icon: hero/currency-dollar
-    summary: |
-      $500,000 grant for research in ethical AI development.
+#  - title: Best Paper Award
+#    url: https://neurips.cc/
+#    date: '2022-12-01'
+#    awarder: NeurIPS
+#    icon: hero/trophy
+#    summary: |
+#      Awarded for groundbreaking work on efficient training of large models.
+#  - title: AI Innovation Grant
+#    url: https://www.nsf.gov/
+#    date: '2021-06-15'
+#    awarder: National Science Foundation
+#    icon: hero/currency-dollar
+#    summary: |
+#      $500,000 grant for research in ethical AI development.
 #  - title: Outstanding PhD Thesis
 #    url: https://www.stanford.edu/
 #    date: '2019-06-30'
