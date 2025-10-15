@@ -149,4 +149,4 @@ languages:
 #      Recognized for contributions to scaling laws in deep learning.
 ---
 
-Chiyuan Wang is a Ph.D. student at the School of Computer Science, Peking University. His research interests include multi-agent systems, computational economics, and algorithmic game theory. He is supervised by Xiaotie Deng, a Chair Professor at the Center on Frontiers of Computing Studies (CFCS) of Peking University, and is jointly co-advised by Professor Bo Li and Yaodong Yang. He is dedicated to empowering AI for Science (AI4S), particularly AI for Economics (AI4E), through solid engineering practices.
+Chiyuan Wang is a Ph.D. student at the School of Computer Science, Peking University. His research interests include multi-agent systems, computational economics, and algorithmic game theory. He is supervised by Prof. Xiaotie Deng and jointly co-advised by Professor Bo Li and Yaodong Yang.
