@@ -79,22 +79,22 @@ work:
     date_start: 2025-09-25
     date_end: ''
     summary: |2-
-      Leading research on multimodal AI systems. Contributed to Llama 2 and other open-source models. 50+ citations in 3 years.
+      Participated in the development of the economic module for a large-scale social simulator, exploring LLM-based approaches for constructing economic systems.
 
 # Skills
 # Add your own SVG icons to `assets/media/icons/`
 skills:
   - name: Technical Skills
     items:
-      - name: Python
+      - name: Python & JAX
         description: ''
         percent: 95
         icon: code-bracket
       - name: Machine Learning
         description: ''
-        percent: 100
+        percent: 90
         icon: chart-bar
-      - name: Cloud Computing (AWS/GCP)
+      - name: C/C++
         description: ''
         percent: 85
         icon: cloud
@@ -102,51 +102,51 @@ skills:
     color: '#eeac02'
     color_border: '#f0bf23'
     items:
-      - name: Hiking in the Rockies
+      - name: Playing Football
         description: ''
         percent: 80
         icon: person-simple-walk
-      - name: Building Custom PCs
+      - name: Traveling
         description: ''
         percent: 90
         icon: cpu-chip
-      - name: Sci-Fi Reading
+      - name: Reading  Novels
         description: ''
         percent: 70
         icon: book-open
 
 languages:
-  - name: English
-    percent: 50
   - name: Chinese
-    percent: 100
+    percent: 95
+  - name: English
+    percent: 60
 
 # Awards.
 #   Add/remove as many awards below as you like.
 #   Only `title`, `awarder`, and `date` are required.
 #   Begin multi-line `summary` with YAML's `|` or `|2-` multi-line prefix and indent 2 spaces below.
-awards:
-  - title: Best Paper Award
-    url: https://neurips.cc/
-    date: '2022-12-01'
-    awarder: NeurIPS
-    icon: hero/trophy
-    summary: |
-      Awarded for groundbreaking work on efficient training of large models.
-  - title: AI Innovation Grant
-    url: https://www.nsf.gov/
-    date: '2021-06-15'
-    awarder: National Science Foundation
-    icon: hero/currency-dollar
-    summary: |
-      $500,000 grant for research in ethical AI development.
-  - title: Outstanding PhD Thesis
-    url: https://www.stanford.edu/
-    date: '2019-06-30'
-    awarder: Stanford University
-    icon: hero/academic-cap
-    summary: |
-      Recognized for contributions to scaling laws in deep learning.
+#awards:
+#  - title: Best Paper Award
+#    url: https://neurips.cc/
+#    date: '2022-12-01'
+#    awarder: NeurIPS
+#    icon: hero/trophy
+#    summary: |
+#      Awarded for groundbreaking work on efficient training of large models.
+#  - title: AI Innovation Grant
+#    url: https://www.nsf.gov/
+#    date: '2021-06-15'
+#    awarder: National Science Foundation
+#    icon: hero/currency-dollar
+#    summary: |
+#      $500,000 grant for research in ethical AI development.
+#  - title: Outstanding PhD Thesis
+#    url: https://www.stanford.edu/
+#    date: '2019-06-30'
+#    awarder: Stanford University
+#    icon: hero/academic-cap
+#    summary: |
+#      Recognized for contributions to scaling laws in deep learning.
 ---
 
 Chiyuan Wang is a Ph.D. student at the School of Computer Science, Peking University. His research interests include multi-agent systems, computational economics, and algorithmic game theory. He is supervised by Xiaotie Deng, a Chair Professor at the Center on Frontiers of Computing Studies (CFCS) of Peking University, and is jointly co-advised by Professor Bo Li and Yaodong Yang. He is dedicated to empowering AI for Science (AI4S), particularly AI for Economics (AI4E), through solid engineering practices.
