@@ -6,6 +6,7 @@ Minimal single-page personal site (static HTML + CSS). Deploys to GitHub Pages v
 
 - **`index.html`** — About text, contact row, and paper list.
 - **`css/style.css`** — Typography, colors, and spacing.
+- **`static/uploads/`** — Profile photos (`photo1.jpg` is used on the page) and other assets (e.g. `resume.pdf`). The deploy workflow copies all of `static/` into the published site.
 
 ## Preview locally
 
