@@ -25,8 +25,8 @@ Push to `main`. In the repository **Settings → Pages**, ensure the source is *
 
 ## Google Search Console (HTML file verification)
 
-The file `google57f470f04652bf67.html` must stay at the **site root** (`https://leafdancer.github.io/google57f470f04652bf67.html`). The deploy workflow copies it into `public/`; do not delete it after verification.
+The file `google57f470f04652bf67.html` must stay at the **site root** (e.g. `https://wangchiyuan.com/google57f470f04652bf67.html`). The deploy workflow copies it into `public/`; do not delete it after verification.
 
 ## Favicon / Google search thumbnail
 
-Replace `static/uploads/pku_icon.png` with a square PNG (ideally **≥ 48×48 px**, many sites use 192×192). Google can take **days or weeks** to refresh the icon next to your result; use [URL Inspection](https://search.google.com/search-console) in Search Console to request re-indexing of the homepage. If you change domain, update the `https://leafdancer.github.io` URLs in `index.html` (`canonical`, `og:image`, `twitter:image`).
+Replace `static/uploads/pku_icon.png` with a square PNG (ideally **≥ 48×48 px**, many sites use 192×192). Google can take **days or weeks** to refresh the icon next to your result; use [URL Inspection](https://search.google.com/search-console) in Search Console to request re-indexing of the homepage. Canonical / Open Graph URLs in `index.html` use **`https://wangchiyuan.com`**; change there if the primary domain changes.
