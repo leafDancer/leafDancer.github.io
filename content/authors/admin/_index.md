@@ -110,7 +110,7 @@ skills:
         description: ''
         percent: 90
         icon: cpu-chip
-      - name: Reading  Novels
+      - name: Reading novels
         description: ''
         percent: 70
         icon: book-open
@@ -149,4 +149,4 @@ languages:
 #      Recognized for contributions to scaling laws in deep learning.
 ---
 
-Chiyuan Wang is a Ph.D. student at the School of Computer Science, Peking University. His research interests include multi-agent systems, computational economics, and algorithmic game theory. He is supervised by Prof. Xiaotie Deng and jointly co-advised by Professor Bo Li and Yaodong Yang.
+Chiyuan Wang is a Ph.D. student in the School of Computer Science at Peking University, affiliated with the Center on Frontiers of Computing Studies (CFCS). He is also a research intern at the Beijing Institute for General Artificial Intelligence (BIGAI). His research interests include multi-agent reinforcement learning, computational economics, and algorithmic game theory. He is supervised by Prof. Xiaotie Deng and co-advised by Prof. Bo Li and Prof. Yaodong Yang.
