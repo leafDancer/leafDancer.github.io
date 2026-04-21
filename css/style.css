@@ -7,8 +7,9 @@
   --accent: #2563eb;
   --border: #e5e5e5;
   --card: #ffffff;
-  /* Cap display width only; height follows intrinsic aspect ratio (no crop / no squeeze). Increase if you want it larger on desktop. */
-  --photo-max-width: 26rem;
+  /* Photo scales down to fit inside this box while keeping aspect ratio (no stretch / no crop). */
+  --photo-max-width: 22rem;
+  --photo-max-height: 15rem;
 }
 
 *,
@@ -70,13 +71,16 @@ a:hover {
 
 .photo-section {
   margin: 0 0 2.75rem;
-  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .photo-frame {
   margin: 0;
-  display: inline-block;
   max-width: 100%;
+  display: flex;
+  justify-content: center;
 }
 
 .photo-frame img {
@@ -84,6 +88,7 @@ a:hover {
   width: auto;
   height: auto;
   max-width: min(100%, var(--photo-max-width));
+  max-height: min(40vh, var(--photo-max-height));
   margin-inline: auto;
   border-radius: 6px;
   border: 1px solid var(--border);
