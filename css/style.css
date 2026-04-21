@@ -181,6 +181,23 @@ h2 {
   margin-bottom: 0;
 }
 
+/* Google Scholar: icon only (no anchor text); label stays in <dt>. */
+.scholar-icon-link {
+  display: inline-flex;
+  align-items: center;
+  color: var(--muted);
+  text-decoration: none;
+}
+
+.scholar-icon-link:hover {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+.scholar-icon-link svg {
+  display: block;
+}
+
 .papers {
   display: flex;
   flex-direction: column;
