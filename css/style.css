@@ -207,6 +207,12 @@ h2 {
   color: var(--muted);
 }
 
+.paper .author-asterisk-note {
+  margin: -0.35rem 0 0.5rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
 .paper .links {
   font-size: 0.875rem;
 }
