@@ -8,8 +8,8 @@
   --border: #e5e5e5;
   --card: #ffffff;
   /* Photo scales down to fit inside this box while keeping aspect ratio (no stretch / no crop). */
-  --photo-max-width: 22rem;
-  --photo-max-height: 15rem;
+  --photo-max-width: 28rem;
+  --photo-max-height: 20rem;
   --content-max-width: 60rem;
 }
 
@@ -205,6 +205,18 @@ h2 {
   margin: 0 0 0.65rem;
   font-size: 0.85rem;
   color: var(--muted);
+}
+
+/* Coauthor homepage links: keep text black like surrounding author list. */
+.paper .meta a,
+.paper .meta a:visited {
+  color: var(--fg);
+}
+
+.paper .meta a:hover {
+  color: var(--fg);
+  text-decoration: underline;
+  text-decoration-color: var(--muted);
 }
 
 .paper .author-asterisk-note {
