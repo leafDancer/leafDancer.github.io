@@ -1,0 +1,189 @@
+/* Minimal single-page academic profile — edit index.html for content */
+
+:root {
+  --bg: #fafafa;
+  --fg: #1a1a1a;
+  --muted: #5c5c5c;
+  --accent: #2563eb;
+  --border: #e5e5e5;
+  --card: #ffffff;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: var(--fg);
+  background: var(--bg);
+}
+
+a {
+  color: var(--accent);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.wrap {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2.5rem 1.5rem 4rem;
+}
+
+header {
+  margin-bottom: 2.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid var(--border);
+}
+
+h1 {
+  margin: 0 0 0.35rem;
+  font-size: 1.75rem;
+  font-weight: 650;
+  letter-spacing: -0.02em;
+}
+
+.tagline {
+  margin: 0;
+  font-size: 1rem;
+  color: var(--muted);
+}
+
+nav {
+  margin-top: 1.25rem;
+}
+
+nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.25rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+nav a:hover {
+  color: var(--accent);
+}
+
+section {
+  margin-bottom: 2.75rem;
+}
+
+section:last-of-type {
+  margin-bottom: 0;
+}
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.intro p {
+  margin: 0 0 1rem;
+}
+
+.intro p:last-child {
+  margin-bottom: 0;
+}
+
+.info-grid {
+  display: grid;
+  gap: 0.65rem 0;
+  font-size: 0.95rem;
+}
+
+.info-grid dt {
+  margin: 0;
+  padding: 0;
+  font-weight: 600;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.info-grid dd {
+  margin: 0 0 0.85rem;
+  padding: 0;
+}
+
+.info-grid dd:last-child {
+  margin-bottom: 0;
+}
+
+.papers {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.paper {
+  padding: 1.1rem 1.15rem;
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+}
+
+.paper h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.paper .meta {
+  margin: 0 0 0.65rem;
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+
+.paper .links {
+  font-size: 0.875rem;
+}
+
+.paper .links span {
+  color: var(--muted);
+}
+
+footer {
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+@media (min-width: 480px) {
+  .info-grid {
+    grid-template-columns: 7.5rem 1fr;
+  }
+
+  .info-grid dt {
+    margin-bottom: 0;
+  }
+
+  .info-grid dd {
+    margin-bottom: 0.65rem;
+  }
+}
