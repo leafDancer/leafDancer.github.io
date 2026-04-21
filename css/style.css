@@ -7,6 +7,8 @@
   --accent: #2563eb;
   --border: #e5e5e5;
   --card: #ffffff;
+  /* Cap display width only; height follows intrinsic aspect ratio (no crop / no squeeze). Increase if you want it larger on desktop. */
+  --photo-max-width: 26rem;
 }
 
 *,
@@ -49,28 +51,6 @@ a:hover {
   border-bottom: 1px solid var(--border);
 }
 
-.header-intro {
-  display: flex;
-  align-items: center;
-  gap: 1.25rem;
-  flex-wrap: wrap;
-}
-
-.avatar {
-  width: 7.5rem;
-  height: 7.5rem;
-  object-fit: cover;
-  border-radius: 50%;
-  border: 1px solid var(--border);
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
-  flex-shrink: 0;
-}
-
-.header-text {
-  flex: 1;
-  min-width: min(100%, 16rem);
-}
-
 .site-header h1 {
   margin: 0 0 0.35rem;
   font-size: 1.75rem;
@@ -86,6 +66,28 @@ a:hover {
 
 .site-header nav {
   margin-top: 1.25rem;
+}
+
+.photo-section {
+  margin: 0 0 2.75rem;
+  text-align: center;
+}
+
+.photo-frame {
+  margin: 0;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.photo-frame img {
+  display: block;
+  width: auto;
+  height: auto;
+  max-width: min(100%, var(--photo-max-width));
+  margin-inline: auto;
+  border-radius: 6px;
+  border: 1px solid var(--border);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
 }
 
 nav ul {
