@@ -6,7 +6,8 @@ Minimal single-page personal site (static HTML + CSS). Deploys to GitHub Pages v
 
 - **`index.html`** — About text, contact row, and paper list.
 - **`css/style.css`** — Typography, colors, and spacing.
-- **`static/uploads/`** — Profile photos (`photo1.jpg` is used on the page) and other assets (e.g. `resume.pdf`). The deploy workflow copies all of `static/` into the published site.
+- **`static/`** — Deployed as-is. Includes **`static/coauthor_infos.json`**: map `"Author Name"` → homepage URL; in `index.html`, wrap a name with `<span class="coauthor-name" data-coauthor="Author Name">Author Name</span>` and the page script turns it into a link only when that key exists in the JSON.
+- **`static/uploads/`** — Photos, `resume.pdf`, etc.
 
 ## Preview locally
 

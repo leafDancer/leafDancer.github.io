@@ -83,8 +83,10 @@
               <h3>Recurrent Structural Policy Gradient for Partially Observable Mean Field Games</h3>
               <p class="meta">
                 Clarisse Wibault, Johannes Forkel, Sebastian Towers, Tiphaine Wibault, Juan Duque, George Whittle,
-                Andreas Schaab, Yucheng Yang, <strong>Chiyuan Wang</strong>, Michael Osborne, Benjamin Moll, Jakob
-                Foerster · 2026
+                <span class="coauthor-name" data-coauthor="Andreas Schaab">Andreas Schaab</span>,
+                <span class="coauthor-name" data-coauthor="Yucheng Yang">Yucheng Yang</span>,
+                <strong>Chiyuan Wang</strong>, Michael Osborne,
+                <span class="coauthor-name" data-coauthor="Benjamin Moll">Benjamin Moll</span>, Jakob Foerster · 2026
               </p>
               <p class="links">
                 <a href="https://arxiv.org/abs/2602.20141">arXiv</a>
@@ -97,7 +99,10 @@
             <article class="paper">
               <h3>Structural Reinforcement Learning for Heterogeneous Agent Macroeconomics</h3>
               <p class="meta">
-                Yucheng Yang<sup>*</sup>, <strong>Chiyuan Wang<sup>*</sup></strong>, Andreas Schaab, Benjamin Moll · 2025
+                <span class="coauthor-name" data-coauthor="Yucheng Yang">Yucheng Yang</span><sup>*</sup>,
+                <strong>Chiyuan Wang<sup>*</sup></strong>,
+                <span class="coauthor-name" data-coauthor="Andreas Schaab">Andreas Schaab</span>,
+                <span class="coauthor-name" data-coauthor="Benjamin Moll">Benjamin Moll</span> · 2025
               </p>
               <p class="meta author-asterisk-note"><sup>*</sup> Equal contribution.</p>
               <p class="links"><a href="https://arxiv.org/abs/2512.18892">arXiv</a></p>
@@ -123,6 +128,30 @@
     </div>
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
+
+      (async () => {
+        try {
+          const res = await fetch("static/coauthor_infos.json", { cache: "no-cache" });
+          if (!res.ok) return;
+          const map = await res.json();
+          if (!map || typeof map !== "object" || Array.isArray(map)) return;
+
+          document.querySelectorAll(".coauthor-name[data-coauthor]").forEach((el) => {
+            const name = el.getAttribute("data-coauthor").trim();
+            const url = map[name];
+            if (!url || typeof url !== "string") return;
+
+            const a = document.createElement("a");
+            a.href = url;
+            a.textContent = name;
+            a.rel = "noopener noreferrer";
+            a.target = "_blank";
+            el.replaceWith(a);
+          });
+        } catch (_) {
+          /* keep plain text */
+        }
+      })();
     </script>
   </body>
 </html>
