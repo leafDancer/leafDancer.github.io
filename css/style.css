@@ -10,7 +10,7 @@
   /* Photo scales down to fit inside this box while keeping aspect ratio (no stretch / no crop). */
   --photo-max-width: 22rem;
   --photo-max-height: 15rem;
-  --content-max-width: 50rem;
+  --content-max-width: 60rem;
 }
 
 *,
@@ -53,12 +53,15 @@ a:hover {
   border-bottom: 1px solid var(--border);
 }
 
+/* Logo + name stay on one horizontal row (narrow screens shrink name, not stack). */
 .title-row {
   display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
   align-items: center;
   gap: 0.75rem;
   margin-bottom: 0.35rem;
-  flex-wrap: wrap;
+  min-width: 0;
 }
 
 .title-logo {
@@ -73,6 +76,9 @@ a:hover {
   font-size: 1.75rem;
   font-weight: 650;
   letter-spacing: -0.02em;
+  line-height: 1.2;
+  min-width: 0;
+  flex: 0 1 auto;
 }
 
 .site-header .tagline {
