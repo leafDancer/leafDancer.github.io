@@ -27,62 +27,87 @@
     <meta property="og:image" content="https://wangchiyuan.com/static/uploads/pku_icon.png" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:image" content="https://wangchiyuan.com/static/uploads/pku_icon.png" />
-    <link rel="stylesheet" href="css/style.css?v=10" />
+    <link rel="stylesheet" href="css/style.css?v=18" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..700,0..100;1,9..144,300..700,0..100&family=Spectral:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=JetBrains+Mono:wght@400;500&display=swap"
+    />
   </head>
   <body>
     <div class="wrap">
       <header class="site-header">
-        <div
-          class="title-row"
-          style="display: grid; grid-template-columns: auto 1fr; align-items: center; column-gap: 0.75rem"
-        >
-          <img
-            class="title-logo"
-            src="static/uploads/pku_icon.png"
-            alt="Peking University"
-            width="40"
-            height="40"
-            decoding="async"
-          />
-          <h1>Chiyuan Wang</h1>
+        <div class="masthead-meta reveal d1">
+          <span class="m-left">A personal page <span class="dot">·</span> Updated 2026</span>
+          <span class="m-right">Beijing, China</span>
         </div>
-        <p class="tagline">PhD student, School of Computer Science, Peking University</p>
-        <nav aria-label="Page">
+
+        <div class="title-row reveal d2">
+          <h1><span class="given">Chiyuan</span> <span class="family">Wang</span></h1>
+        </div>
+        <p class="tagline reveal d3">
+          PhD student, School of Computer Science,
+          <span class="affil">
+            <img
+              class="tagline-logo"
+              src="static/uploads/pku_icon.png"
+              alt=""
+              width="40"
+              height="40"
+              decoding="async"
+            />Peking University.</span>
+        </p>
+        <nav aria-label="Page" class="reveal d4">
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#portrait">Photo</a></li>
-            <li><a href="#info">Contact &amp; info</a></li>
-            <li><a href="#papers">Papers</a></li>
+            <li><a href="#info">Contact</a></li>
+            <li><a href="#papers">Research</a></li>
           </ul>
         </nav>
       </header>
 
       <main>
-        <section id="about" class="intro">
-          <h2>About</h2>
-          <p>
-            I am a Ph.D. student in the School of Computer Science at Peking University, affiliated with the Center on
-            Frontiers of Computing Studies (CFCS). I work on multi-agent systems, quantitative macro, and AI tools for social
-            science. I am currently supervised by Prof. Xiaotie Deng and co-advised by Prof. Bo Li and Prof. Yaodong Yang.
-          </p>
+        <section id="about" class="bio reveal d3">
+          <div class="intro">
+            <h2 data-numeral="I">About</h2>
+            <p class="lede">
+              I am a Ph.D. student in the School of Computer Science at Peking University, affiliated with the
+              <a href="https://cfcs.pku.edu.cn/index.htm">Center on Frontiers of Computing Studies (CFCS)</a>. I work on
+              multi-agent systems, quantitative macro, and AI tools for social science.
+            </p>
+            <p>
+              I am currently supervised by Prof.
+              <span class="coauthor-name" data-coauthor="Xiaotie Deng">Xiaotie Deng</span>
+              and co-advised by Prof.
+              <span class="coauthor-name" data-coauthor="Bo Li">Bo Li</span>
+              and Prof.
+              <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span>.
+            </p>
+          </div>
+
+          <aside id="portrait" class="photo-section" aria-label="Portrait">
+            <figure class="photo-frame">
+              <a
+                href="static/uploads/photo3.jpg"
+                download="chiyuan-wang.jpg"
+                class="photo-download"
+                aria-label="Download portrait photo"
+                title="Click to download"
+              >
+                <img src="static/uploads/photo3.jpg" alt="Portrait of Chiyuan Wang" decoding="async" />
+                <figcaption class="photo-caption">
+                  <span class="rule"></span>
+                  <span>Portrait &mdash; click to download</span>
+                  <span class="arrow">↓</span>
+                </figcaption>
+              </a>
+            </figure>
+          </aside>
         </section>
 
-        <section id="portrait" class="photo-section" aria-label="Portrait">
-          <figure class="photo-frame">
-            <a
-              href="static/uploads/photo3.jpg"
-              download="chiyuan-wang.jpg"
-              class="photo-download"
-              aria-label="Download portrait photo"
-              title="Click to download"
-            >
-              <img src="static/uploads/photo3.jpg" alt="Portrait of Chiyuan Wang" decoding="async" />
-            </a>
-          </figure>
-        </section>
-
-        <section id="info">
-          <h2>Contact &amp; information</h2>
+        <section id="info" class="reveal d4">
+          <h2 data-numeral="II">Contact</h2>
           <dl class="info-grid">
             <dt>Email</dt>
             <dd><a href="mailto:wang2021@stu.pku.edu.cn">wang2021@stu.pku.edu.cn</a></dd>
@@ -92,20 +117,19 @@
             <dd><a href="https://orcid.org/0009-0007-5726-7151">0009-0007-5726-7151</a></dd>
             <dt>Affiliation</dt>
             <dd><a href="https://cs.pku.edu.cn/">School of Computer Science, Peking University</a></dd>
-            <dt>Google Scholar</dt>
+            <dt>Scholar</dt>
             <dd>
               <a
-                class="scholar-icon-link"
+                class="scholar-link"
                 href="https://scholar.google.com/citations?user=0DAl9o8AAAAJ"
-                aria-label="Google Scholar profile"
-                title="Google Scholar"
                 rel="noopener noreferrer"
                 target="_blank"
               >
                 <svg
+                  class="scholar-glyph"
                   xmlns="http://www.w3.org/2000/svg"
-                  width="22"
-                  height="22"
+                  width="14"
+                  height="14"
                   viewBox="0 0 24 24"
                   fill="none"
                   stroke="currentColor"
@@ -117,14 +141,52 @@
                   <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
                   <path d="M6 12v5c0 1.7 1.3 3 3 3h6c1.7 0 3-1.3 3-3v-5" />
                 </svg>
+                <span>Google Scholar profile</span>
               </a>
             </dd>
           </dl>
         </section>
 
-        <section id="papers">
-          <h2>Papers</h2>
+        <section id="papers" class="reveal d5">
+          <h2 data-numeral="III">Research</h2>
           <div class="papers">
+            <article class="paper">
+              <h3>DSPG: Finding Heterogeneous-Agent Equilibria with Distribution-based Differentiable Policy Gradients</h3>
+              <p class="venue">Submitted to <em>NeurIPS 2026</em> (main track)</p>
+              <p class="meta">
+                <strong>Chiyuan Wang</strong>,
+                <span class="coauthor-name" data-coauthor="Peiyuan Zhang">Peiyuan Zhang</span>,
+                <span class="coauthor-name" data-coauthor="Xiangyu Cao">Xiangyu Cao</span>,
+                <span class="coauthor-name" data-coauthor="Xiaotie Deng">Xiaotie Deng</span>,
+                <span class="coauthor-name" data-coauthor="Greg Kaplan">Greg Kaplan</span>,
+                <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span>,
+                <span class="coauthor-name" data-coauthor="Bo Li">Bo Li</span>
+                <span class="year">· 2026</span>
+              </p>
+              <p class="links">
+                <a href="static/uploads/DSPG_NIPS26_v12.pdf">PDF</a>
+              </p>
+            </article>
+
+            <article class="paper">
+              <h3>AER-bench: A Comprehensive Benchmark for Automatic Economic Research with Language Models</h3>
+              <p class="venue">Submitted to <em>NeurIPS 2026</em> (Datasets &amp; Benchmarks track)</p>
+              <p class="meta">
+                <strong>Chiyuan Wang<sup>*</sup></strong>,
+                <span class="coauthor-name" data-coauthor="Ying Kang">Ying Kang</span><sup>*</sup>,
+                <span class="coauthor-name" data-coauthor="Peiyuan Zhang">Peiyuan Zhang</span>,
+                <span class="coauthor-name" data-coauthor="Xiaotie Deng">Xiaotie Deng</span>,
+                <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span>,
+                <span class="coauthor-name" data-coauthor="Linfeng Zhang">Linfeng Zhang</span>,
+                <span class="coauthor-name" data-coauthor="Bo Li">Bo Li</span>
+                <span class="year">· 2026</span>
+              </p>
+              <p class="meta author-asterisk-note"><sup>*</sup> Equal contribution.</p>
+              <p class="links">
+                <a href="static/uploads/AER_bench_NIPS26_v2.pdf">PDF</a>
+              </p>
+            </article>
+
             <!-- RSPG / MFAX — uncomment when ready to show again
             <article class="paper">
               <h3>Recurrent Structural Policy Gradient for Partially Observable Mean Field Games</h3>
@@ -149,7 +211,7 @@
                 <span class="coauthor-name" data-coauthor="Yucheng Yang">Yucheng Yang</span><sup>*</sup>,
                 <strong>Chiyuan Wang<sup>*</sup></strong>,
                 <span class="coauthor-name" data-coauthor="Andreas Schaab">Andreas Schaab</span>,
-                <span class="coauthor-name" data-coauthor="Benjamin Moll">Benjamin Moll</span> · 2025
+                <span class="coauthor-name" data-coauthor="Benjamin Moll">Benjamin Moll</span> <span class="year">· 2025</span>
               </p>
               <p class="meta author-asterisk-note"><sup>*</sup> Equal contribution.</p>
               <p class="links"><a href="https://arxiv.org/abs/2512.18892">arXiv</a></p>
@@ -157,13 +219,14 @@
 
             <article class="paper">
               <h3>Sample-Efficient Regret-Minimizing Double Oracle in Extensive-Form Games</h3>
+              <p class="venue"><em>JMLR</em>, Revise &amp; Resubmit</p>
               <p class="meta">
                 <span class="coauthor-name" data-coauthor="Xiaohang Tang">Xiaohang Tang</span>,
                 <strong>Chiyuan Wang</strong>,
                 <span class="coauthor-name" data-coauthor="Chengdong Ma">Chengdong Ma</span>,
                 <span class="coauthor-name" data-coauthor="Ilija Bogunovic">Ilija Bogunovic</span>,
                 <span class="coauthor-name" data-coauthor="Stephen McAleer">Stephen McAleer</span>,
-                <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span> · 2024
+                <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span> <span class="year">· 2024</span>
               </p>
               <p class="links">
                 <a href="https://arxiv.org/abs/2411.00954">arXiv</a>
@@ -175,7 +238,10 @@
         </section>
       </main>
 
-      <footer>© <span id="y"></span> Chiyuan Wang</footer>
+      <footer>
+        <span>© <span id="y"></span> Chiyuan Wang</span>
+        <span class="colophon">Last updated <span id="upd">2026</span></span>
+      </footer>
     </div>
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
