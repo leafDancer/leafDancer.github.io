@@ -149,18 +149,7 @@ a:hover {
   letter-spacing: -0.02em;
 }
 
-.title-logo {
-  width: 4.8rem;
-  height: 4.8rem;
-  object-fit: contain;
-  display: block;
-  opacity: 0.95;
-  align-self: center;
-  transform: translateY(-0.15rem);
-  filter: saturate(0.9);
-}
-
-/* Inline school mark inside the tagline — sits right before "Peking University" */
+/* Caption: small-caps, rotated along photo's right edge */
 .tagline .affil {
   white-space: nowrap;
 }
@@ -542,7 +531,6 @@ h2::after {
   color: var(--claret);
   border-bottom-color: var(--claret);
 }
-.paper .links span { display: none; } /* replace " · " separator with spacing */
 
 /* ============================================================
    FOOTER
