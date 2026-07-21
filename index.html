@@ -183,7 +183,7 @@
                 <span class="year">· 2026</span>
               </p>
               <p class="links">
-                <a href="static/uploads/DSPG_NIPS26_v12.pdf" type="application/pdf">PDF</a>
+                <a href="static/uploads/DSPG_NIPS26_v12.pdf" type="application/pdf">PDF <small>(617 KB)</small></a>
               </p>
             </article>
 
@@ -202,7 +202,7 @@
               </p>
               <p class="meta author-asterisk-note"><sup>*</sup> Equal contribution.</p>
               <p class="links">
-                <a href="static/uploads/AER_bench_NIPS26_v2.pdf" type="application/pdf">PDF</a>
+                <a href="static/uploads/AER_bench_NIPS26_v2.pdf" type="application/pdf">PDF <small>(1.0 MB)</small></a>
               </p>
             </article>
 
@@ -264,6 +264,34 @@
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
 
+      // --- Nav active section highlight (Intersection Observer) ---
+      (() => {
+        const navLinks = document.querySelectorAll('nav a[href^="#"]');
+        if (!navLinks.length) return;
+        const sections = [];
+        navLinks.forEach(a => {
+          const el = document.querySelector(a.getAttribute('href'));
+          if (el) sections.push({ el, a });
+        });
+        if (!sections.length) return;
+
+        const observer = new IntersectionObserver(
+          entries => {
+            entries.forEach(e => {
+              if (e.isIntersecting) {
+                navLinks.forEach(a => a.classList.remove('nav-active'));
+                const match = sections.find(s => s.el === e.target);
+                if (match) match.a.classList.add('nav-active');
+              }
+            });
+          },
+          { rootMargin: '-20% 0px -60% 0px', threshold: 0 }
+        );
+
+        sections.forEach(s => observer.observe(s.el));
+      })();
+
+      // --- Coauthor link resolver ---
       (async () => {
         try {
           const res = await fetch("static/coauthor_infos.json", { cache: "no-cache" });

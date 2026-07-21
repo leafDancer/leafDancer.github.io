@@ -11,7 +11,7 @@
   --paper-deep:  #ebe2d1;   /* shadow fold */
   --ink:         #1c1a17;   /* near-black, warm */
   --ink-soft:    #4a463f;
-  --ink-mute:    #7a7367;
+  --ink-mute:    #5e584c;
   --rule:        #c9bfab;
   --rule-soft:   #ddd3bd;
   --claret:      #8a1d2a;   /* accent — a muted PKU-red nod */
@@ -92,6 +92,11 @@ a {
 a:hover {
   color: var(--claret);
   text-decoration-color: var(--claret);
+}
+a:focus-visible {
+  outline: 2px solid var(--claret);
+  outline-offset: 3px;
+  border-radius: 2px;
 }
 
 /* ============================================================
@@ -192,11 +197,19 @@ nav ul {
 nav a {
   color: var(--ink-soft);
   text-decoration: none;
-  padding: 0.2rem 0;
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  min-width: 44px;
+  padding: 0.35rem 0;
   border-bottom: 1px solid transparent;
   transition: color 160ms ease, border-color 160ms ease;
 }
 nav a:hover {
+  color: var(--claret);
+  border-bottom-color: var(--claret);
+}
+nav a.nav-active {
   color: var(--claret);
   border-bottom-color: var(--claret);
 }
@@ -434,8 +447,19 @@ h2::after {
   padding: 1.6rem 0 1.75rem 3.25rem;
   border-top: 1px solid var(--rule-soft);
   counter-increment: paper;
+  transition: background 200ms ease, border-color 200ms ease;
+}
+.paper:hover {
+  background: rgba(138, 29, 42, 0.025);
+  border-top-color: rgba(138, 29, 42, 0.18);
+}
+.paper:hover + .paper {
+  border-top-color: rgba(138, 29, 42, 0.18);
 }
 .paper:last-child { border-bottom: 1px solid var(--rule-soft); }
+.paper:hover:last-child {
+  border-bottom-color: rgba(138, 29, 42, 0.18);
+}
 
 .paper::before {
   content: counter(paper, decimal-leading-zero);
@@ -595,6 +619,11 @@ footer .colophon em {
   .tagline-logo { width: 1.2em; height: 1.2em; vertical-align: -0.28em; }
 }
 
+@media (max-width: 380px) {
+  .photo-caption { right: -0.1rem; font-size: 0.5rem; letter-spacing: 0.2em; }
+  .photo-caption .rule { width: 0.8rem; }
+}
+
 /* ============================================================
    LOAD-IN REVEAL
    ============================================================ */
@@ -620,4 +649,66 @@ footer .colophon em {
 ::selection {
   background: var(--claret);
   color: var(--paper);
+}
+
+/* ============================================================
+   PRINT
+   ============================================================ */
+@media print {
+  body::before,
+  body::after {
+    display: none;
+  }
+
+  body {
+    color: #000;
+    background: #fff;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .wrap {
+    max-width: 100%;
+    padding: 1rem;
+  }
+
+  .site-header nav,
+  .photo-caption,
+  footer {
+    display: none;
+  }
+
+  .site-header {
+    border-bottom: 1px solid #ccc;
+    margin-bottom: 2rem;
+    padding-bottom: 0.5rem;
+  }
+
+  .masthead-meta {
+    border-bottom: none;
+    padding-bottom: 0.5rem;
+  }
+
+  a {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  .paper {
+    page-break-inside: avoid;
+    border-top: 1px solid #ddd;
+  }
+
+  .paper .links a[href]::after {
+    content: " (" attr(href) ")";
+    font-size: 0.72rem;
+    text-transform: none;
+    letter-spacing: 0;
+  }
+
+  .reveal {
+    opacity: 1 !important;
+    transform: none !important;
+    animation: none !important;
+  }
 }
