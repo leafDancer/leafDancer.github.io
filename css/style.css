@@ -449,17 +449,19 @@ h2::after {
   counter-increment: paper;
   transition: background 200ms ease, border-color 200ms ease;
 }
-.paper:hover {
-  background: rgba(138, 29, 42, 0.025);
-  border-top-color: rgba(138, 29, 42, 0.18);
-}
-.paper:hover + .paper {
-  border-top-color: rgba(138, 29, 42, 0.18);
+@media (hover: hover) {
+  .paper:hover {
+    background: rgba(138, 29, 42, 0.025);
+    border-top-color: rgba(138, 29, 42, 0.18);
+  }
+  .paper:hover + .paper {
+    border-top-color: rgba(138, 29, 42, 0.18);
+  }
+  .paper:hover:last-child {
+    border-bottom-color: rgba(138, 29, 42, 0.18);
+  }
 }
 .paper:last-child { border-bottom: 1px solid var(--rule-soft); }
-.paper:hover:last-child {
-  border-bottom-color: rgba(138, 29, 42, 0.18);
-}
 
 .paper::before {
   content: counter(paper, decimal-leading-zero);
@@ -554,6 +556,12 @@ h2::after {
 .paper .links a:hover {
   color: var(--claret);
   border-bottom-color: var(--claret);
+}
+.paper .links a small {
+  text-transform: none;
+  letter-spacing: 0;
+  font-size: 0.85em;
+  color: var(--ink-mute);
 }
 
 /* ============================================================
