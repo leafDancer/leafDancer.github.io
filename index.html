@@ -32,23 +32,78 @@
     <script type="application/ld+json">
       {
         "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "Chiyuan Wang",
-        "url": "https://wangchiyuan.com/",
-        "jobTitle": "PhD Student",
-        "affiliation": {
-          "@type": "Organization",
-          "name": "Center on Frontiers of Computing Studies (CFCS), Peking University"
-        },
-        "email": "wang2021@stu.pku.edu.cn",
-        "sameAs": [
-          "https://github.com/leafDancer",
-          "https://orcid.org/0009-0007-5726-7151",
-          "https://scholar.google.com/citations?user=0DAl9o8AAAAJ"
+        "@graph": [
+          {
+            "@type": "Person",
+            "@id": "https://wangchiyuan.com/#person",
+            "name": "Chiyuan Wang",
+            "url": "https://wangchiyuan.com/",
+            "jobTitle": "PhD Student",
+            "affiliation": {
+              "@type": "Organization",
+              "name": "Center on Frontiers of Computing Studies (CFCS), Peking University"
+            },
+            "alumniOf": {
+              "@type": "EducationalOrganization",
+              "name": "Yuanpei College, Peking University"
+            },
+            "email": "wang2021@stu.pku.edu.cn",
+            "sameAs": [
+              "https://github.com/leafDancer",
+              "https://orcid.org/0009-0007-5726-7151",
+              "https://scholar.google.com/citations?user=0DAl9o8AAAAJ"
+            ]
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "AER-bench: A Comprehensive Benchmark for Automatic Economic Research with Language Models",
+            "author": [
+              { "@id": "https://wangchiyuan.com/#person" },
+              "Ying Kang",
+              "Peiyuan Zhang",
+              "Xiaotie Deng",
+              "Yaodong Yang",
+              "Linfeng Zhang",
+              "Bo Li"
+            ],
+            "datePublished": "2026",
+            "url": "https://wangchiyuan.com/static/uploads/AER_bench.pdf"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Structural Reinforcement Learning for Heterogeneous Agent Macroeconomics",
+            "author": [
+              "Yucheng Yang",
+              { "@id": "https://wangchiyuan.com/#person" },
+              "Andreas Schaab",
+              "Benjamin Moll"
+            ],
+            "datePublished": "2025",
+            "url": "https://arxiv.org/abs/2512.18892"
+          },
+          {
+            "@type": "ScholarlyArticle",
+            "name": "Sample-Efficient Regret-Minimizing Double Oracle in Two-Player Zero-Sum Extensive-Form Games",
+            "author": [
+              "Xiaohang Tang",
+              { "@id": "https://wangchiyuan.com/#person" },
+              "Chengdong Ma",
+              "Ilija Bogunovic",
+              "Stephen McAleer",
+              "Yaodong Yang"
+            ],
+            "datePublished": "2026",
+            "url": "https://wangchiyuan.com/static/uploads/RMDO_JMLR.pdf",
+            "sameAs": "https://arxiv.org/abs/2411.00954",
+            "publisher": {
+              "@type": "Organization",
+              "name": "Journal of Machine Learning Research"
+            }
+          }
         ]
       }
     </script>
-    <link rel="stylesheet" href="css/style.css?v=21" />
+    <link rel="stylesheet" href="css/style.css?v=22" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -90,23 +145,6 @@
 
       <main>
         <section id="about" class="bio reveal d3">
-          <div class="intro">
-            <h2 data-numeral="I">About</h2>
-            <p class="lede">
-              I am a Ph.D. student in the School of Computer Science at Peking University, affiliated with the
-              <a href="https://cfcs.pku.edu.cn/index.htm">Center on Frontiers of Computing Studies (CFCS)</a>. I work on
-              multi-agent systems, quantitative macro, and AI tools for social science.
-            </p>
-            <p>
-              I am currently supervised by Prof.
-              <span class="coauthor-name" data-coauthor="Xiaotie Deng">Xiaotie Deng</span>
-              and co-advised by Prof.
-              <span class="coauthor-name" data-coauthor="Bo Li">Bo Li</span>
-              and Prof.
-              <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span>.
-            </p>
-          </div>
-
           <aside id="portrait" class="photo-section" aria-label="Portrait">
             <figure class="photo-frame">
               <a
@@ -125,6 +163,27 @@
               </a>
             </figure>
           </aside>
+
+          <div class="intro">
+            <h2 data-numeral="I">About</h2>
+            <p class="lede">
+              I am a Ph.D. student in the School of Computer Science at Peking University, affiliated with the
+              <a href="https://cfcs.pku.edu.cn/index.htm">Center on Frontiers of Computing Studies (CFCS)</a>. I work on
+              multi-agent systems, quantitative macro, and AI tools for social science.
+            </p>
+            <p>
+              I am currently supervised by Prof.
+              <span class="coauthor-name" data-coauthor="Xiaotie Deng">Xiaotie Deng</span>
+              and co-advised by Prof.
+              <span class="coauthor-name" data-coauthor="Bo Li">Bo Li</span>
+              and Prof.
+              <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span>.
+            </p>
+            <p>
+              I received my B.S. in Data Science from
+              <a href="https://yuanpei.pku.edu.cn/">Yuanpei College</a> at Peking University (2021&ndash;2025).
+            </p>
+          </div>
         </section>
 
         <section id="info" class="reveal d4">
@@ -170,7 +229,31 @@
 
         <section id="papers" class="reveal d5">
           <h2 data-numeral="III">Research</h2>
+
+          <h3 class="paper-group-label">Publications</h3>
           <div class="papers">
+            <article class="paper">
+              <h3>Sample-Efficient Regret-Minimizing Double Oracle in Two-Player Zero-Sum Extensive-Form Games</h3>
+              <p class="venue"><em>JMLR</em>, Accepted</p>
+              <p class="meta">
+                <span class="coauthor-name" data-coauthor="Xiaohang Tang">Xiaohang Tang</span>,
+                <strong>Chiyuan Wang</strong>,
+                <span class="coauthor-name" data-coauthor="Chengdong Ma">Chengdong Ma</span>,
+                <span class="coauthor-name" data-coauthor="Ilija Bogunovic">Ilija Bogunovic</span>,
+                <span class="coauthor-name" data-coauthor="Stephen McAleer">Stephen McAleer</span>,
+                <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span> <span class="year">· 2026</span>
+              </p>
+              <p class="links">
+                <a href="static/uploads/RMDO_JMLR.pdf" type="application/pdf">PDF <small>(3.0 MB)</small></a>
+                <a href="https://arxiv.org/abs/2411.00954">arXiv</a>
+                <a href="https://github.com/xiaohangt/RMDO">Code</a>
+              </p>
+            </article>
+          </div>
+
+          <h3 class="paper-group-label">Working Papers</h3>
+          <div class="papers">
+            <!-- DSPG — hidden for now
             <article class="paper">
               <h3>DSPG: Finding Heterogeneous-Agent Equilibria with Distribution-based Differentiable Policy Gradients</h3>
               <p class="meta">
@@ -184,9 +267,10 @@
                 <span class="year">· 2026</span>
               </p>
               <p class="links">
-                <a href="static/uploads/DSPG_NIPS26_v12.pdf" type="application/pdf">PDF <small>(617 KB)</small></a>
+                <a href="static/uploads/DSPG.pdf" type="application/pdf">PDF <small>(617 KB)</small></a>
               </p>
             </article>
+            -->
 
             <article class="paper">
               <h3>AER-bench: A Comprehensive Benchmark for Automatic Economic Research with Language Models</h3>
@@ -202,7 +286,7 @@
               </p>
               <p class="meta author-asterisk-note"><sup>*</sup> Equal contribution.</p>
               <p class="links">
-                <a href="static/uploads/AER_bench_NIPS26_v2.pdf" type="application/pdf">PDF <small>(1.0 MB)</small></a>
+                <a href="static/uploads/AER_bench.pdf" type="application/pdf">PDF <small>(1.0 MB)</small></a>
               </p>
             </article>
 
@@ -237,24 +321,6 @@
                 <a href="static/uploads/SRL.pdf" type="application/pdf">PDF <small>(1.1 MB)</small></a>
                 <a href="https://arxiv.org/abs/2512.18892">arXiv</a>
                 <a href="https://github.com/StructuralRL/SRL">Code</a>
-              </p>
-            </article>
-
-            <article class="paper">
-              <h3>Sample-Efficient Regret-Minimizing Double Oracle in Extensive-Form Games</h3>
-              <p class="venue"><em>JMLR</em>, Accepted</p>
-              <p class="meta">
-                <span class="coauthor-name" data-coauthor="Xiaohang Tang">Xiaohang Tang</span>,
-                <strong>Chiyuan Wang</strong>,
-                <span class="coauthor-name" data-coauthor="Chengdong Ma">Chengdong Ma</span>,
-                <span class="coauthor-name" data-coauthor="Ilija Bogunovic">Ilija Bogunovic</span>,
-                <span class="coauthor-name" data-coauthor="Stephen McAleer">Stephen McAleer</span>,
-                <span class="coauthor-name" data-coauthor="Yaodong Yang">Yaodong Yang</span> <span class="year">· 2024</span>
-              </p>
-              <p class="links">
-                <a href="static/uploads/RMDO_JMLR.pdf" type="application/pdf">PDF <small>(3.0 MB)</small></a>
-                <a href="https://arxiv.org/abs/2411.00954">arXiv</a>
-                <a href="https://github.com/xiaohangt/RMDO">Code</a>
               </p>
             </article>
           </div>
