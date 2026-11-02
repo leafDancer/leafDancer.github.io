@@ -128,7 +128,7 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="css/style.css?v=25" />
+    <link rel="stylesheet" href="css/style.css?v=26" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -167,11 +167,14 @@
               <li><a href="#info">Contact</a></li>
             </ul>
           </nav>
-          <div class="project-shortcuts" role="group" aria-label="Project pages">
-            <span class="project-shortcuts-label">Projects</span>
-            <a class="project-shortcut" href="aer-bench/">AER-bench <span aria-hidden="true">→</span></a>
-            <a class="project-shortcut" href="https://clarisse-wibault.github.io/rspg/">RSPG <span aria-hidden="true">↗</span></a>
-          </div>
+          <details class="project-menu">
+            <summary>Projects<svg class="project-chevron" viewBox="0 0 16 16" aria-hidden="true"><path d="m4 6 4 4 4-4" /></svg></summary>
+            <div class="project-menu-links" role="group" aria-label="Project pages">
+              <a href="srl/"><span>SRL<small>Structural reinforcement learning</small></span><span aria-hidden="true">→</span></a>
+              <a href="aer-bench/"><span>AER-bench<small>Evaluating economic research capabilities</small></span><span aria-hidden="true">→</span></a>
+              <a href="https://clarisse-wibault.github.io/rspg/"><span>RSPG<small>Recurrent structural policy gradient</small></span><span aria-hidden="true">↗</span></a>
+            </div>
+          </details>
         </div>
       </header>
 
@@ -328,6 +331,7 @@
                 <a href="static/uploads/SRL_slides.pdf" type="application/pdf">Slides <small>(2.7 MB)</small></a>
                 <a href="https://arxiv.org/abs/2512.18892">arXiv</a>
                 <a href="https://github.com/StructuralRL/SRL">Code</a>
+                <a href="srl/">Project</a>
               </p>
             </article>
           </div>
@@ -382,6 +386,25 @@
     </div>
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
+
+      // Native disclosure keeps project links available without JavaScript.
+      (() => {
+        const menu = document.querySelector('.project-menu');
+        const trigger = menu.querySelector('summary');
+        document.addEventListener('click', event => {
+          if (!menu.contains(event.target)) menu.open = false;
+        });
+        document.addEventListener('focusin', event => {
+          if (!menu.contains(event.target)) menu.open = false;
+        });
+        menu.addEventListener('keydown', event => {
+          if (event.key === 'Escape' && menu.open) {
+            menu.open = false;
+            trigger.focus();
+          }
+        });
+        menu.querySelectorAll('a').forEach(link => link.addEventListener('click', () => { menu.open = false; }));
+      })();
 
       // --- Highlight the section at the top of the reading area ---
       (() => {

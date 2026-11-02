@@ -33,6 +33,7 @@ jobs:
           mkdir -p public/static
           cp -r static/. public/static/
           cp -r aer-bench public/
+          cp -r srl public/
           if [ -f google57f470f04652bf67.html ]; then cp google57f470f04652bf67.html public/; fi
 
       - name: Upload artifact
