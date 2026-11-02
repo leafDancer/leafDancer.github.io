@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#f6f8f7" />
     <link rel="preload" href="assets/fonts/playfair-display-normal.woff2" as="font" type="font/woff2" crossorigin />
     <link rel="preload" href="assets/fonts/fira-sans-400.woff2" as="font" type="font/woff2" crossorigin />
-    <link rel="stylesheet" href="style.css?v=1" />
+    <link rel="stylesheet" href="style.css?v=2" />
     <script src="script.js" defer></script>
     <script type="application/ld+json">
       {
@@ -204,12 +204,58 @@
             </table>
           </div>
           <div class="table-notes"><p>Scores and 95% confidence intervals are reproduced from Table 3 of the submitted paper. Each task contributes equally to the overall score. Underlined task values are the highest reported point estimates; they do not imply statistical separation.</p><p>GPT-5.4 (75.0%) and Claude 4.6 Opus (74.0%) are statistically indistinguishable in the paired bootstrap test (p = 0.099). This table reports tool-free foundation-model baselines.</p></div>
+          <a class="text-link" href="#robustness">Compare the two judges<svg class="icon" aria-hidden="true"><use href="#arrow" /></svg></a>
+        </div>
+      </section>
+
+      <section class="section robustness" id="robustness" aria-labelledby="robustness-title">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="section-number">05 / Evaluation robustness</p><h2 id="robustness-title">Consistent scores across two judges.</h2></div>
+            <p class="section-description">A closer look at how the evaluation changes when each judge scores the same model outputs.</p>
+          </div>
+          <div class="judge-comparison">
+            <div class="judge-copy">
+              <p>Across the 16 evaluated models, <strong>Claude 4.6 Sonnet</strong> and <strong>GPT-5.2</strong> produce closely aligned overall scores, supporting a stable aggregate comparison across the two evaluators.</p>
+              <dl class="agreement-stats">
+                <div><dt>0.97</dt><dd>linear-fit R<sup>2</sup></dd></div>
+                <div><dt>1.6 <span>pp</span></dt><dd>mean absolute difference</dd></div>
+              </dl>
+              <p class="agreement-scope">Agreement is measured on each model’s overall benchmark score. For the five generative tasks, the reported results average the two judges’ independent, dimension-level rubric scores.</p>
+              <a class="text-link" href="../static/uploads/AER_bench.pdf#page=6">Evaluation details in Section 4.2<svg class="icon" aria-hidden="true"><use href="#arrow" /></svg></a>
+            </div>
+            <figure class="figure">
+              <button class="figure-open" type="button" data-figure="assets/judge_agreement.png" data-figure-title="Cross-judge agreement on overall scores across 16 models" aria-label="Enlarge cross-judge agreement figure">
+                <img src="assets/judge_agreement.png" alt="Overall scores for 16 models, with GPT-5.2 as judge on the horizontal axis and Claude 4.6 Sonnet on the vertical axis. Points cluster along the fitted line, y = 1.23x − 14.6, with R squared 0.97. The mean absolute score difference is 1.6 percentage points." width="1070" height="642" loading="lazy" />
+                <span class="zoom-hint"><svg class="icon" aria-hidden="true"><use href="#expand" /></svg><span>Enlarge figure</span></span>
+              </button>
+              <figcaption>Figure 4 from the paper. Each point is one evaluated model. The red dashed line is the linear fit; the gray dashed line marks equal scores from both judges.</figcaption>
+            </figure>
+          </div>
+          <details class="judge-details">
+            <summary>Task-level scoring differences<span class="details-toggle" aria-hidden="true">+</span></summary>
+            <div class="judge-detail-layout">
+              <figure class="figure">
+                <button class="figure-open" type="button" data-figure="assets/judge_task_differences.png" data-figure-title="Task-level score differences: Claude 4.6 Sonnet minus GPT-5.2" aria-label="Enlarge task-level judge differences figure">
+                  <img src="assets/judge_task_differences.png" alt="Heatmap of Claude 4.6 Sonnet scores minus GPT-5.2 scores across 16 models and six non-CI tasks. Claude generally gives higher Model Generation and Mathematical Modeling scores, while GPT gives higher Paper Abstraction scores." width="1049" height="627" loading="lazy" />
+                  <span class="zoom-hint"><svg class="icon" aria-hidden="true"><use href="#expand" /></svg><span>Enlarge figure</span></span>
+                </button>
+                <figcaption>Figure 5 from the paper. Differences are in percentage points: red indicates higher scores from Claude 4.6 Sonnet; blue indicates higher scores from GPT-5.2.</figcaption>
+              </figure>
+              <div class="judge-copy">
+                <h3>Where the scores differ.</h3>
+                <p>The judges have task-specific scoring preferences. On average, Claude 4.6 Sonnet scores Mathematical Modeling <strong>4.0 pp higher</strong> and Model Generation <strong>13.0 pp higher</strong>; GPT-5.2 scores Paper Abstraction <strong>12.2 pp higher</strong>.</p>
+                <p>Averaging the two judges reduces the influence of these preferences. The scatter plot summarizes overall model-level agreement; this heatmap shows the task-level differences behind that aggregate.</p>
+                <a class="text-link" href="../static/uploads/AER_bench.pdf#page=6">Full analysis in Section 4.2 and Appendix C<svg class="icon" aria-hidden="true"><use href="#arrow" /></svg></a>
+              </div>
+            </div>
+          </details>
         </div>
       </section>
 
       <section class="section resources" id="resources" aria-labelledby="resources-title">
         <div class="container resource-layout">
-          <div><p class="section-number">05 / Read &amp; cite</p><h2 id="resources-title">Take a closer look.</h2><p class="description">Read the full methodology, evaluation rubrics, confidence intervals, and robustness analysis in the paper.</p><div class="resource-links"><a class="button" href="../static/uploads/AER_bench.pdf" type="application/pdf"><svg class="icon" aria-hidden="true"><use href="#paper" /></svg>Paper PDF <small>1.2 MB</small></a><a class="button" href="../static/uploads/AER_bench_slides_en.pdf" type="application/pdf" hreflang="en"><svg class="icon" aria-hidden="true"><use href="#slides" /></svg>Slides <small>0.4 MB</small></a></div></div>
+          <div><p class="section-number">06 / Read &amp; cite</p><h2 id="resources-title">Take a closer look.</h2><p class="description">Read the full methodology, evaluation rubrics, confidence intervals, and robustness analysis in the paper.</p><div class="resource-links"><a class="button" href="../static/uploads/AER_bench.pdf" type="application/pdf"><svg class="icon" aria-hidden="true"><use href="#paper" /></svg>Paper PDF <small>1.2 MB</small></a><a class="button" href="../static/uploads/AER_bench_slides_en.pdf" type="application/pdf" hreflang="en"><svg class="icon" aria-hidden="true"><use href="#slides" /></svg>Slides <small>0.4 MB</small></a></div></div>
           <div><div class="citation-head"><h3>Cite this working paper</h3><button class="copy-button" id="copy-citation" type="button"><svg class="icon" aria-hidden="true"><use href="#copy" /></svg><span>Copy BibTeX</span></button></div><pre><code id="citation">@misc{wang2026aerbench,
   title = {Can Foundation Models Really Understand
     Economic Research? A Pipeline-Level Benchmark

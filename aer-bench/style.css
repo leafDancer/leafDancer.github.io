@@ -30,7 +30,7 @@ button, a, select { -webkit-tap-highlight-color: transparent; }
 button { color: inherit; cursor: pointer; }
 a { color: inherit; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 a:hover { color: var(--teal); }
-button:focus-visible, a:focus-visible, select:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
+button:focus-visible, a:focus-visible, select:focus-visible, summary:focus-visible, [tabindex]:focus-visible { outline: 3px solid var(--gold); outline-offset: 5px; }
 img { display: block; max-width: 100%; height: auto; }
 svg.icon { width: 18px; height: 18px; flex: 0 0 18px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .symbols { position: absolute; width: 0; height: 0; overflow: hidden; }
@@ -153,6 +153,24 @@ tbody tr[hidden] { display: none; }
 .table-help { display: none; }
 .table-notes { margin-top: 17px; font-size: 11px; color: var(--muted); max-width: 940px; }
 .table-notes p { margin-bottom: 8px; }
+.robustness { background: var(--white); }
+.judge-comparison { display: grid; grid-template-columns: 0.8fr 1.3fr; gap: 64px; align-items: center; }
+.judge-copy { color: var(--muted); font-size: 15px; }
+.judge-copy strong { color: var(--ink); font-weight: 500; }
+.judge-comparison .figure, .judge-detail-layout .figure { margin: 0; min-width: 0; }
+.agreement-stats { display: flex; gap: 37px; margin: 26px 0; padding-block: 21px; border-block: 1px solid var(--line); }
+.agreement-stats dt { color: var(--teal); font: 500 38px/1.25 var(--serif); }
+.agreement-stats dt span { font-size: 23px; }
+.agreement-stats dd { margin: 8px 0 0; font-size: 11px; }
+.judge-copy .agreement-scope { font-size: 12px; }
+.judge-details { margin-top: 36px; border-block: 1px solid var(--line); }
+.judge-details summary { display: flex; justify-content: space-between; align-items: center; gap: 20px; min-height: 62px; padding-block: 14px; cursor: pointer; list-style: none; font-size: 14px; color: var(--teal-dark); }
+.judge-details summary::-webkit-details-marker { display: none; }
+.judge-details summary:hover { color: var(--teal); }
+.details-toggle { font: 24px/1 var(--sans); }
+.judge-details[open] .details-toggle { transform: rotate(45deg); }
+.judge-detail-layout { display: grid; grid-template-columns: 1.3fr 0.8fr; gap: 64px; align-items: center; padding: 8px 0 28px; }
+.judge-detail-layout h3 { color: var(--ink); font: 500 26px/1.3 var(--serif); }
 .resources { background: var(--ink); color: white; border-color: var(--ink); }
 .resources .section-number { color: #95c8bc; }
 .resources .section-number::after { background: #95c8bc; }
@@ -189,6 +207,7 @@ body:has(dialog[open]) { overflow: hidden; }
 @media (max-width: 1100px) {
   .intro-layout, .resource-layout { gap: 45px; }
   .finding-main, .finding-notes { gap: 35px; }
+  .judge-comparison, .judge-detail-layout { gap: 35px; }
   .task-explorer { grid-template-columns: 300px 1fr; }
   .task-panel { padding: 30px; }
   .hero h1 { font-size: 54px; }
@@ -218,6 +237,10 @@ body:has(dialog[open]) { overflow: hidden; }
   .finding-main .summary { max-width: none; }
   .finding-main .figure { max-width: 590px; }
   .finding-numbers { margin-top: 22px; }
+  .judge-comparison, .judge-detail-layout { grid-template-columns: 1fr; gap: 25px; }
+  .judge-copy { font-size: 14px; }
+  .judge-comparison .figure, .judge-detail-layout .figure { max-width: 680px; }
+  .agreement-stats { gap: 46px; margin-block: 21px; }
   .resources .description { max-width: none; }
   .resource-links { flex-direction: row; flex-wrap: wrap; margin-bottom: 10px; }
   .table-help { display: block; font-size: 11px; color: var(--muted); margin-bottom: 10px; }
@@ -295,6 +318,13 @@ body:has(dialog[open]) { overflow: hidden; }
   tbody th, thead th:first-child { min-width: 150px; width: 150px; max-width: 150px; white-space: normal; overflow-wrap: anywhere; }
   th, td { padding-block: 13px; }
   .table-notes { font-size: 10px; }
+  .agreement-stats { gap: 30px; padding-block: 17px; }
+  .agreement-stats dt { font-size: 34px; }
+  .agreement-stats dd { font-size: 10px; }
+  .judge-details { margin-top: 25px; }
+  .judge-details summary { font-size: 13px; }
+  .judge-detail-layout { gap: 22px; padding-bottom: 22px; }
+  .judge-detail-layout h3 { font-size: 24px; }
   .resource-layout { gap: 24px; }
   .resources .description { font-size: 13px; }
   .resource-links { flex-direction: column; gap: 10px; }
@@ -310,7 +340,7 @@ body:has(dialog[open]) { overflow: hidden; }
 }
 @media print {
   .site-nav, .actions, .zoom-hint, .results-controls, .copy-button, .copy-status, .footer, dialog { display: none; }
-  body, .resources, .findings { background: white; color: black; }
+  body, .resources, .findings, .robustness { background: white; color: black; }
   .container { width: 100%; }
   .hero { padding-top: 0; }
   .section { padding-block: 25px; }
