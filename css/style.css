@@ -181,7 +181,12 @@ a:focus-visible {
 }
 
 /* Nav as a thin ticker row */
-.site-header nav {
+.header-navigation {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem 2rem;
   margin-top: 1.75rem;
 }
 nav ul {
@@ -215,6 +220,41 @@ nav a.nav-active {
   color: var(--claret);
   border-bottom-color: var(--claret);
 }
+
+.project-shortcuts {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+}
+.project-shortcuts-label {
+  margin-right: 0.25rem;
+  color: var(--ink-mute);
+  font-family: var(--mono);
+  font-size: 0.63rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.project-shortcut {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.65rem;
+  min-height: 44px;
+  padding: 0.5rem 0.8rem;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  color: var(--claret-ink);
+  font-family: var(--mono);
+  font-size: 0.75rem;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 160ms ease, border-color 160ms ease, background 160ms ease;
+}
+.project-shortcut:hover {
+  border-color: var(--claret);
+  background: var(--paper-deep);
+}
+.project-shortcut span { font-size: 0.95rem; }
 
 /* ============================================================
    SECTIONS
@@ -722,7 +762,7 @@ footer .colophon em {
     padding: 1rem;
   }
 
-  .site-header nav,
+  .header-navigation,
   .photo-caption,
   footer {
     display: none;
