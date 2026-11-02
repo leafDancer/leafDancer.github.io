@@ -28,17 +28,6 @@
   selectComparison('two-asset');
   comparisonTablist.hidden = false;
 
-  const sampleButtons = [...document.querySelectorAll('[data-sample]')];
-  const sampleFigures = [...document.querySelectorAll('[data-sample-figure]')];
-  const selectSample = count => {
-    sampleButtons.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.sample === count)));
-    sampleFigures.forEach(figure => { figure.hidden = figure.dataset.sampleFigure !== count; });
-    document.getElementById('sample-status').textContent = `${Number(count).toLocaleString('en-US')} simulated trajectories per update.`;
-  };
-  sampleButtons.forEach(button => button.addEventListener('click', () => selectSample(button.dataset.sample)));
-  selectSample('512');
-  document.querySelector('.sample-controls').hidden = false;
-
   const dialog = document.getElementById('figure-viewer');
   const image = document.getElementById('figure-image');
   let previousFocus;

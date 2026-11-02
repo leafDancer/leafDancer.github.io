@@ -16,8 +16,8 @@
   <meta name="theme-color" content="#faf9f5" />
   <link rel="preload" href="../aer-bench/assets/fonts/playfair-display-normal.woff2" as="font" type="font/woff2" crossorigin />
   <link rel="preload" href="../aer-bench/assets/fonts/fira-sans-400.woff2" as="font" type="font/woff2" crossorigin />
-  <link rel="stylesheet" href="style.css?v=1" />
-  <script src="script.js" defer></script>
+  <link rel="stylesheet" href="style.css?v=2" />
+  <script src="script.js?v=2" defer></script>
   <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"ScholarlyArticle","name":"Structural Reinforcement Learning for Heterogeneous Agent Macroeconomics","alternateName":"SRL","url":"https://wangchiyuan.com/srl/","sameAs":"https://arxiv.org/abs/2512.18892","author":[{"@type":"Person","name":"Yucheng Yang","url":"https://sites.google.com/site/yangyucheng1993"},{"@type":"Person","name":"Chiyuan Wang","url":"https://wangchiyuan.com/"},{"@type":"Person","name":"Andreas Schaab","url":"https://andreasschaab.com/"},{"@type":"Person","name":"Benjamin Moll","url":"https://benjaminmoll.com/"}],"encoding":{"@type":"MediaObject","contentUrl":"https://wangchiyuan.com/static/uploads/SRL.pdf","encodingFormat":"application/pdf"}}
   </script>
@@ -170,7 +170,7 @@
 
     <section class="section paper-band" id="validation" aria-labelledby="validation-title">
       <div class="container">
-        <div class="section-heading"><div><p class="section-number">05 / Further validation</p><h2 id="validation-title">What changes the learned policy?</h2></div><p class="section-description">Inspect the role of the information set and the number of simulated trajectories.</p></div>
+        <div class="section-heading"><div><p class="section-number">05 / Further validation</p><h2 id="validation-title">What changes the learned policy?</h2></div><p class="section-description">Inspect how a richer price history affects consumption policies.</p></div>
         <details class="disclosure"><summary>Does adding a lagged price change decisions? <svg class="icon" aria-hidden="true"><use href="#chevron" /></svg></summary><div class="disclosure-content validation-layout"><div><h3>Richer price information.</h3><p>In the Huggett experiment, allowing the policy to condition on one lagged bond price changes consumption policies only slightly over the displayed states.</p><p class="small-note">This is an empirical robustness check in the benchmark, rather than a general result that current prices are sufficient in every economy.</p></div><figure class="research-figure">
       <button class="figure-open" type="button" data-figure="assets/huggett-price-history.png" data-pdf="assets/huggett-price-history.pdf" data-title="the lagged-price robustness comparison" aria-label="Enlarge the lagged-price robustness comparison">
         <img src="assets/huggett-price-history.png" alt="Nine panels compare Huggett consumption policies using current prices only with policies also conditioning on three different lagged bond prices. The curves are nearly overlapping." width="1650" height="1238" loading="lazy" />
@@ -178,25 +178,6 @@
       </button>
       <figcaption>Huggett price-history robustness: current-price policies versus one-price-lag policies. <a href="assets/huggett-price-history.pdf">Original PDF</a></figcaption>
     </figure></div></details>
-        <details class="disclosure"><summary>How does the simulation sample size affect precision? <svg class="icon" aria-hidden="true"><use href="#chevron" /></svg></summary><div class="disclosure-content validation-layout"><div><h3>More paths, tighter estimates.</h3><p>Compare consumption policies and pointwise confidence bands in the Krusell–Smith experiment. Fewer simulated paths produce greater uncertainty, especially in the wealth tail.</p><fieldset class="sample-controls" hidden><legend>Trajectories per update</legend><button type="button" data-sample="24" aria-pressed="false">24</button><button type="button" data-sample="512" aria-pressed="true">512</button><button type="button" data-sample="2048" aria-pressed="false">2,048</button></fieldset><p class="sample-status" id="sample-status" role="status">512 simulated trajectories per update.</p><p class="small-note">Each view displays an original figure. The curves are reported results, not a live model simulation.</p></div><div class="sample-figures"><div data-sample-figure="24"><figure class="research-figure">
-      <button class="figure-open" type="button" data-figure="assets/ks-samples-24.png" data-pdf="assets/ks-samples-24.pdf" data-title="the 24-trajectory policy estimate" aria-label="Enlarge the 24-trajectory policy estimate">
-        <img src="assets/ks-samples-24.png" alt="Krusell–Smith consumption policies with 24 simulated paths show wide confidence bands, especially at higher wealth." width="1000" height="750" loading="lazy" />
-        <span class="zoom-hint"><svg class="icon" aria-hidden="true"><use href="#expand" /></svg><span>Enlarge</span></span>
-      </button>
-      <figcaption>24 trajectories per update. <a href="assets/ks-samples-24.pdf">Original PDF</a></figcaption>
-    </figure></div><div data-sample-figure="512"><figure class="research-figure">
-      <button class="figure-open" type="button" data-figure="assets/ks-samples-512.png" data-pdf="assets/ks-samples-512.pdf" data-title="the 512-trajectory policy estimate" aria-label="Enlarge the 512-trajectory policy estimate">
-        <img src="assets/ks-samples-512.png" alt="Krusell–Smith consumption policies with 512 simulated paths show narrow confidence bands across three income states." width="1000" height="750" loading="lazy" />
-        <span class="zoom-hint"><svg class="icon" aria-hidden="true"><use href="#expand" /></svg><span>Enlarge</span></span>
-      </button>
-      <figcaption>512 trajectories per update. <a href="assets/ks-samples-512.pdf">Original PDF</a></figcaption>
-    </figure></div><div data-sample-figure="2048"><figure class="research-figure">
-      <button class="figure-open" type="button" data-figure="assets/ks-samples-2048.png" data-pdf="assets/ks-samples-2048.pdf" data-title="the 2048-trajectory policy estimate" aria-label="Enlarge the 2048-trajectory policy estimate">
-        <img src="assets/ks-samples-2048.png" alt="Krusell–Smith consumption policies with 2,048 simulated paths show tighter confidence bands across three income states." width="1000" height="750" loading="lazy" />
-        <span class="zoom-hint"><svg class="icon" aria-hidden="true"><use href="#expand" /></svg><span>Enlarge</span></span>
-      </button>
-      <figcaption>2,048 trajectories per update. <a href="assets/ks-samples-2048.pdf">Original PDF</a></figcaption>
-    </figure></div></div></div></details>
       </div>
     </section>
 

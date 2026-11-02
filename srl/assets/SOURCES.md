@@ -15,6 +15,3 @@ Figures are supplied by the authors. PNG previews are rendered from the original
 | portfolio-ssj | `SRL_SSJ_comparison.pdf` | 59 |
 | huggett-ssj | `SRL_SSJ_comparison.pdf` | 64 |
 | huggett-price-history | `Huggett_lag_price_policy_9.pdf` | 54 (corresponding supplied figure) |
-| ks-samples-24 | `KS_s1_24_CI.pdf` | 50 |
-| ks-samples-512 | `KS_policy_s1_CI.pdf` | 48 |
-| ks-samples-2048 | `KS_s1_2048_CI.pdf` | 49 |
