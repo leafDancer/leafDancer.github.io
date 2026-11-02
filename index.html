@@ -128,7 +128,7 @@
         ]
       }
     </script>
-    <link rel="stylesheet" href="css/style.css?v=23" />
+    <link rel="stylesheet" href="css/style.css?v=24" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -162,8 +162,8 @@
         <nav aria-label="Page" class="reveal d4">
           <ul>
             <li><a href="#about">About</a></li>
-            <li><a href="#info">Contact</a></li>
             <li><a href="#papers">Research</a></li>
+            <li><a href="#info">Contact</a></li>
           </ul>
         </nav>
       </header>
@@ -216,49 +216,8 @@
           </div>
         </section>
 
-        <section id="info" class="reveal d4">
-          <h2 data-numeral="II">Contact</h2>
-          <dl class="info-grid">
-            <dt>Email</dt>
-            <dd><a href="mailto:wang2021@stu.pku.edu.cn">wang2021@stu.pku.edu.cn</a></dd>
-            <dt>GitHub</dt>
-            <dd><a href="https://github.com/leafDancer" rel="me">github.com/leafDancer</a></dd>
-            <dt>ORCID</dt>
-            <dd><a href="https://orcid.org/0009-0007-5726-7151">0009-0007-5726-7151</a></dd>
-            <dt>Affiliation</dt>
-            <dd><a href="https://cs.pku.edu.cn/">School of Computer Science, Peking University</a></dd>
-            <dt>Scholar</dt>
-            <dd>
-              <a
-                class="scholar-link"
-                href="https://scholar.google.com/citations?user=0DAl9o8AAAAJ"
-                rel="noopener noreferrer"
-                target="_blank"
-              >
-                <svg
-                  class="scholar-glyph"
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  aria-hidden="true"
-                >
-                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
-                  <path d="M6 12v5c0 1.7 1.3 3 3 3h6c1.7 0 3-1.3 3-3v-5" />
-                </svg>
-                <span>Google Scholar profile</span>
-              </a>
-            </dd>
-          </dl>
-        </section>
-
-        <section id="papers" class="reveal d5">
-          <h2 data-numeral="III">Research</h2>
+        <section id="papers" class="reveal d4">
+          <h2 data-numeral="II">Research</h2>
 
           <h3 class="paper-group-label">Publications</h3>
           <div class="papers">
@@ -343,6 +302,7 @@
               <p class="meta author-asterisk-note"><sup>*</sup> Equal contribution.</p>
               <p class="links">
                 <a href="static/uploads/AER_bench.pdf" type="application/pdf">PDF <small>(1.2 MB)</small></a>
+                <a href="static/uploads/AER_bench_slides_en.pdf" type="application/pdf" hreflang="en">Slides (English) <small>(0.4 MB)</small></a>
               </p>
             </article>
 
@@ -357,12 +317,53 @@
               <p class="meta author-asterisk-note"><sup>*</sup> Equal contribution.</p>
               <p class="links">
                 <a href="static/uploads/SRL.pdf" type="application/pdf">PDF <small>(1.1 MB)</small></a>
-                <a href="static/uploads/SRL_slides.pdf" type="application/pdf">Slides <small>(2.5 MB)</small></a>
+                <a href="static/uploads/SRL_slides.pdf" type="application/pdf">Slides <small>(2.7 MB)</small></a>
                 <a href="https://arxiv.org/abs/2512.18892">arXiv</a>
                 <a href="https://github.com/StructuralRL/SRL">Code</a>
               </p>
             </article>
           </div>
+        </section>
+
+        <section id="info" class="reveal d5">
+          <h2 data-numeral="III">Contact</h2>
+          <dl class="info-grid">
+            <dt>Email</dt>
+            <dd><a href="mailto:wang2021@stu.pku.edu.cn">wang2021@stu.pku.edu.cn</a></dd>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/leafDancer" rel="me">github.com/leafDancer</a></dd>
+            <dt>ORCID</dt>
+            <dd><a href="https://orcid.org/0009-0007-5726-7151">0009-0007-5726-7151</a></dd>
+            <dt>Affiliation</dt>
+            <dd><a href="https://cs.pku.edu.cn/">School of Computer Science, Peking University</a></dd>
+            <dt>Scholar</dt>
+            <dd>
+              <a
+                class="scholar-link"
+                href="https://scholar.google.com/citations?user=0DAl9o8AAAAJ"
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                <svg
+                  class="scholar-glyph"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  aria-hidden="true"
+                >
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z" />
+                  <path d="M6 12v5c0 1.7 1.3 3 3 3h6c1.7 0 3-1.3 3-3v-5" />
+                </svg>
+                <span>Google Scholar profile</span>
+              </a>
+            </dd>
+          </dl>
         </section>
       </main>
 
@@ -374,7 +375,7 @@
     <script>
       document.getElementById("y").textContent = new Date().getFullYear();
 
-      // --- Nav active section highlight (Intersection Observer) ---
+      // --- Highlight the section at the top of the reading area ---
       (() => {
         const navLinks = document.querySelectorAll('nav a[href^="#"]');
         if (!navLinks.length) return;
@@ -385,20 +386,39 @@
         });
         if (!sections.length) return;
 
-        const observer = new IntersectionObserver(
-          entries => {
-            entries.forEach(e => {
-              if (e.isIntersecting) {
-                navLinks.forEach(a => a.classList.remove('nav-active'));
-                const match = sections.find(s => s.el === e.target);
-                if (match) match.a.classList.add('nav-active');
-              }
-            });
-          },
-          { rootMargin: '-20% 0px -60% 0px', threshold: 0 }
-        );
+        let scheduled = false;
+        const updateActiveSection = () => {
+          scheduled = false;
+          const readingLine = Math.min(120, window.innerHeight * 0.2);
+          let active = sections[0];
+          sections.forEach(section => {
+            if (section.el.getBoundingClientRect().top <= readingLine) active = section;
+          });
 
-        sections.forEach(s => observer.observe(s.el));
+          // The last section can be too short to reach the top of the viewport.
+          if (window.scrollY > 0 && window.scrollY + window.innerHeight >= document.documentElement.scrollHeight - 2) {
+            active = sections[sections.length - 1];
+          }
+
+          sections.forEach(section => {
+            const current = section === active;
+            section.a.classList.toggle('nav-active', current);
+            if (current) section.a.setAttribute('aria-current', 'location');
+            else section.a.removeAttribute('aria-current');
+          });
+        };
+        const scheduleUpdate = () => {
+          if (scheduled) return;
+          scheduled = true;
+          requestAnimationFrame(updateActiveSection);
+        };
+
+        window.addEventListener('scroll', scheduleUpdate, { passive: true });
+        window.addEventListener('resize', scheduleUpdate);
+        window.addEventListener('hashchange', scheduleUpdate);
+        window.addEventListener('load', scheduleUpdate, { once: true });
+        document.fonts.ready.then(scheduleUpdate);
+        updateActiveSection();
       })();
 
       // --- Coauthor link resolver ---
