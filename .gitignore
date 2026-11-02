@@ -1,5 +1,6 @@
 # Local build output (CI also writes public/ in the runner only)
 public/
+local-data/
 
 # OS / editors
 .DS_Store
