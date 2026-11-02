@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>AER-bench — Can Foundation Models Really Understand Economic Research?</title>
+    <meta name="description" content="AER-bench evaluates 16 foundation models across seven stages of economic research, with 1,629 items drawn from modern research articles and historical economic texts." />
+    <link rel="canonical" href="https://wangchiyuan.com/aer-bench/" />
+    <link rel="icon" type="image/png" href="../static/uploads/pku_icon.png" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="AER-bench — A Pipeline-Level Benchmark for Agentic Research Systems" />
+    <meta property="og:description" content="Seven tasks. 1,629 items. 16 foundation models. A diagnostic of the model capabilities behind agentic economic research." />
+    <meta property="og:url" content="https://wangchiyuan.com/aer-bench/" />
+    <meta property="og:image" content="https://wangchiyuan.com/aer-bench/assets/framework.png" />
+    <meta name="theme-color" content="#f6f8f7" />
+    <link rel="preload" href="assets/fonts/playfair-display-normal.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="preload" href="assets/fonts/fira-sans-400.woff2" as="font" type="font/woff2" crossorigin />
+    <link rel="stylesheet" href="style.css?v=1" />
+    <script src="script.js" defer></script>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "ScholarlyArticle",
+        "name": "Can Foundation Models Really Understand Economic Research? A Pipeline-Level Benchmark for Agentic Research Systems",
+        "alternateName": "AER-bench",
+        "url": "https://wangchiyuan.com/aer-bench/",
+        "encoding": {"@type": "MediaObject", "contentUrl": "https://wangchiyuan.com/static/uploads/AER_bench.pdf", "encodingFormat": "application/pdf"},
+        "author": [
+          {"@type": "Person", "name": "Chiyuan Wang", "url": "https://wangchiyuan.com/"},
+          {"@type": "Person", "name": "Ying Kang"},
+          {"@type": "Person", "name": "Peiyuan Zhang"},
+          {"@type": "Person", "name": "Xiaotie Deng"},
+          {"@type": "Person", "name": "Yaodong Yang"},
+          {"@type": "Person", "name": "Linfeng Zhang"},
+          {"@type": "Person", "name": "Bo Li"}
+        ]
+      }
+    </script>
+  </head>
+  <body id="top">
+    <a class="skip-link" href="#overview">Skip to the research</a>
+    <svg class="symbols" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+      <symbol id="arrow" viewBox="0 0 24 24"><path d="M5 12h14m-6-6 6 6-6 6" /></symbol>
+      <symbol id="external" viewBox="0 0 24 24"><path d="M7 17 17 7M7 7h10v10" /></symbol>
+      <symbol id="paper" viewBox="0 0 24 24"><path d="M14 3H5v18h14V8Zm0 0v5h5M8 12h8M8 16h6" /></symbol>
+      <symbol id="slides" viewBox="0 0 24 24"><path d="M3 4h18M5 4v12h14V4M12 16v5m-4 0 4-3 4 3M8 8h8M8 11h5" /></symbol>
+      <symbol id="expand" viewBox="0 0 24 24"><path d="M8 3H3v5m13-5h5v5M3 16v5h5m13-5v5h-5" /></symbol>
+      <symbol id="copy" viewBox="0 0 24 24"><rect x="8" y="8" width="12" height="13" rx="1" /><path d="M16 8V3H3v13h5" /></symbol>
+      <symbol id="close" viewBox="0 0 24 24"><path d="m6 6 12 12M6 18 18 6" /></symbol>
+      <symbol id="sort" viewBox="0 0 24 24"><path d="m8 9 4-4 4 4m-8 6 4 4 4-4" /></symbol>
+    </svg>
+
+    <header class="site-nav">
+      <nav class="container nav-inner" aria-label="Project">
+        <a href="#top" class="brand" aria-label="AER-bench, back to top">AER<span>-bench</span></a>
+        <div class="nav-links">
+          <a href="#benchmark">Benchmark</a>
+          <a href="#results">Results</a>
+          <a class="nav-paper" href="../static/uploads/AER_bench.pdf">Paper</a>
+        </div>
+        <a href="../" class="home-link" aria-label="Chiyuan Wang’s personal homepage"><span>Chiyuan Wang</span><svg class="icon" aria-hidden="true"><use href="#external" /></svg></a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero container" aria-labelledby="project-title">
+        <h1 id="project-title">Can foundation models really understand <em>economic research?</em></h1>
+        <p class="subtitle">A Pipeline-Level Benchmark for Agentic Research Systems</p>
+        <p class="authors">
+          <span class="author"><a href="../">Chiyuan Wang</a><sup>*</sup></span>
+          <span class="author">Ying Kang<sup>*</sup></span>
+          <span class="author"><a href="https://cdjnzpy.github.io/">Peiyuan Zhang</a></span>
+          <span class="author"><a href="https://scholar.google.com/citations?user=OBUwP_oAAAAJ&amp;hl=en">Xiaotie Deng</a></span>
+          <span class="author"><a href="https://www.yangyaodong.com/">Yaodong Yang</a></span>
+          <span class="author"><a href="https://scholar.google.com/citations?user=jk7qwmcAAAAJ&amp;hl=zh-CN">Linfeng Zhang</a></span>
+          <span class="author"><a href="https://liboecon.com/">Bo Li</a></span>
+        </p>
+        <p class="contribution"><sup>*</sup> Equal contribution</p>
+        <div class="actions">
+          <a class="button primary" href="../static/uploads/AER_bench.pdf" type="application/pdf"><svg class="icon" aria-hidden="true"><use href="#paper" /></svg>Read the paper</a>
+          <a class="button" href="../static/uploads/AER_bench_slides_en.pdf" type="application/pdf" hreflang="en"><svg class="icon" aria-hidden="true"><use href="#slides" /></svg>Slides (English)</a>
+          <a class="text-link" href="#results">Explore the results<svg class="icon" aria-hidden="true"><use href="#arrow" /></svg></a>
+        </div>
+        <div class="workflow" aria-label="The seven benchmark tasks">
+          <p class="workflow-caption">The intellectual core of economic research</p>
+          <ol>
+            <li><a href="#benchmark" data-task-link="EK"><span class="code">EK</span><span class="name">Economic<br />knowledge</span></a></li>
+            <li><a href="#benchmark" data-task-link="LR"><span class="code">LR</span><span class="name">Literature<br />review</span></a></li>
+            <li><a href="#benchmark" data-task-link="CI"><span class="code">CI</span><span class="name">Concept<br />identification</span></a></li>
+            <li><a href="#benchmark" data-task-link="MG"><span class="code">MG</span><span class="name">Model<br />generation</span></a></li>
+            <li><a href="#benchmark" data-task-link="MM"><span class="code">MM</span><span class="name">Mathematical<br />modeling</span></a></li>
+            <li><a href="#benchmark" data-task-link="EA"><span class="code">EA</span><span class="name">Economic<br />analysis</span></a></li>
+            <li><a href="#benchmark" data-task-link="PA"><span class="code">PA</span><span class="name">Paper<br />abstraction</span></a></li>
+          </ol>
+        </div>
+        <dl class="stats">
+          <div><dt>7</dt><dd>research tasks</dd></div>
+          <div><dt>1,629</dt><dd>evaluation items</dd></div>
+          <div><dt>16</dt><dd>foundation models</dd></div>
+          <div><dt>2</dt><dd>independent judges</dd></div>
+        </dl>
+      </section>
+
+      <section class="section" id="overview" aria-labelledby="overview-title">
+        <div class="container">
+          <div class="intro-layout">
+            <div><p class="section-number">01 / The research question</p><h2 id="overview-title">A benchmark built around the research workflow.</h2></div>
+            <div class="intro-copy">
+              <p>Economic research connects knowledge, literature, formal models, analysis, and writing. An agentic research system relies on its foundation model at every stage. <strong>Where can that model carry the work, and where does it need support?</strong></p>
+              <p>AER-bench turns the intellectual core of this workflow into seven measurable tasks. Its tool-free baselines expose stage-specific strengths and weaknesses, providing a reference for building and evaluating research agents.</p>
+              <div class="corpus">
+                <div><strong>191</strong><span>Modern research articles<br /><em>American Economic Review</em> &amp; <em>Econometrica</em>, 2025</span></div>
+                <div><strong>900</strong><span>Historical text segments<br />1900–1950, annotated by economics doctoral students</span></div>
+              </div>
+            </div>
+          </div>
+          <figure class="figure">
+            <button class="figure-open" type="button" data-figure="assets/framework.png" data-figure-title="AER-bench: original framework from the paper" aria-label="Enlarge the AER-bench framework figure">
+              <img src="assets/framework.png" alt="The paper’s framework: modern and historical source texts yield seven research tasks, evaluated across 16 foundation models using task-specific rubrics and two judges." width="2048" height="770" loading="lazy" />
+              <span class="zoom-hint"><svg class="icon" aria-hidden="true"><use href="#expand" /></svg><span>Enlarge figure</span></span>
+            </button>
+            <figcaption>Figure 1 from the paper. The benchmark reverse-engineers economic research into individually measurable capabilities.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="section" id="benchmark" aria-labelledby="benchmark-title">
+        <div class="container">
+          <div class="section-heading">
+            <div><p class="section-number">02 / Inside the benchmark</p><h2 id="benchmark-title">Seven stages. Different demands.</h2></div>
+            <p class="section-description">Select a task to explore what the model receives, what it produces, and how the answer is evaluated.</p>
+          </div>
+          <div class="task-explorer">
+            <div class="task-tabs" role="tablist" aria-label="Research tasks" aria-orientation="vertical">
+              <button class="task-tab" id="tab-EK" role="tab" aria-controls="task-panel" aria-selected="true" data-task="EK"><span class="task-code">EK</span><span class="task-label">Economic Knowledge</span><span class="count">189</span></button>
+              <button class="task-tab" id="tab-LR" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1" data-task="LR"><span class="task-code">LR</span><span class="task-label">Literature Review</span><span class="count">187</span></button>
+              <button class="task-tab" id="tab-CI" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1" data-task="CI"><span class="task-code">CI</span><span class="task-label">Concept Identification</span><span class="count">160</span></button>
+              <button class="task-tab" id="tab-MG" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1" data-task="MG"><span class="task-code">MG</span><span class="task-label">Model Generation</span><span class="count">124</span></button>
+              <button class="task-tab" id="tab-MM" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1" data-task="MM"><span class="task-code">MM</span><span class="task-label">Mathematical Modeling</span><span class="count">399</span></button>
+              <button class="task-tab" id="tab-EA" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1" data-task="EA"><span class="task-code">EA</span><span class="task-label">Economic Analysis</span><span class="count">380</span></button>
+              <button class="task-tab" id="tab-PA" role="tab" aria-controls="task-panel" aria-selected="false" tabindex="-1" data-task="PA"><span class="task-code">PA</span><span class="task-label">Paper Abstraction</span><span class="count">190</span></button>
+            </div>
+            <div class="task-panel" id="task-panel" role="tabpanel" aria-labelledby="tab-EK" tabindex="0">
+              <p class="task-meta"><span id="task-code">EK</span><span>/</span><span id="task-count">189 evaluation items</span></p>
+              <h3 id="task-title">Economic Knowledge</h3>
+              <p class="task-description" id="task-description">Does the model know the methods, findings, and institutional context that economic research depends on?</p>
+              <dl class="task-detail"><dt>The task</dt><dd id="task-format">Answer paper-specific questions in single-choice, true/false, fill-in-the-blank, and ordering formats.</dd></dl>
+              <dl class="task-detail"><dt>Evaluation</dt><dd id="task-scoring">Rule-based matching for factual answers, with normalized Kendall’s tau for ordering questions.</dd></dl>
+            </div>
+          </div>
+          <div class="protocol"><span class="protocol-label">Evaluation protocol</span><p>Zero-shot, tool-free inference. EK and CI use rule-based scoring; the five generative tasks use dimension-level rubrics averaged across Claude 4.6 Sonnet and GPT-5.2. LR also includes citation recall.</p></div>
+          <noscript><p>Task details are available in Section 2.1 of the <a href="../static/uploads/AER_bench.pdf">paper</a>. The task selector and result sorting require JavaScript; all reported scores remain available below.</p></noscript>
+        </div>
+      </section>
+
+      <section class="section findings" id="findings" aria-labelledby="findings-title">
+        <div class="container">
+          <div class="finding-main">
+            <div>
+              <p class="section-number">03 / What we learned</p>
+              <h2 id="findings-title">Formal strength.<br />Fragile knowledge.</h2>
+              <p class="summary">Models perform strongly on mathematical derivation, while literature review remains a bottleneck. Economic knowledge varies widely, identifying where research agents need retrieval and citation support.</p>
+              <div class="finding-numbers"><div><strong>56.0%</strong><span>best literature-review score</span></div><div><strong>25.6–76.3%</strong><span>economic-knowledge range</span></div></div>
+            </div>
+            <figure class="figure">
+              <button class="figure-open" type="button" data-figure="assets/task_score_distribution.png" data-figure-title="Task-score distributions across all 16 models" aria-label="Enlarge task-score distribution figure"><img src="assets/task_score_distribution.png" alt="Task scores across 16 models: literature review ranges from 39.1 to 56.0 percent; mathematical modeling ranges from 78.4 to 92.8 percent; economic knowledge has the widest spread, from 25.6 to 76.3 percent." width="732" height="439" loading="lazy" /><span class="zoom-hint"><svg class="icon" aria-hidden="true"><use href="#expand" /></svg><span>Enlarge figure</span></span></button>
+              <figcaption>Figure 3 from the paper. Dots show individual models; diamonds show task medians. Original plot, without visual modification.</figcaption>
+            </figure>
+          </div>
+          <div class="finding-notes">
+            <article><h3>Model families have distinct fingerprints.</h3><p>GPT-5 variants lead mathematical modeling. Claude models show a stable advantage in concept identification. These profiles support choosing models for individual research stages.</p><button class="text-link figure-link" type="button" data-figure="assets/all_model_task_scores.png" data-figure-title="Per-task capability profiles for all 16 models">View capability profiles<svg class="icon" aria-hidden="true"><use href="#arrow" /></svg></button></article>
+            <article><h3>Historical understanding is uneven.</h3><p>Earlier economic texts show an aggregate gap of about 5 percentage points. After controlling for text length, the era effect is smaller and not statistically significant (+2.75 pp, p = 0.442).</p><button class="text-link figure-link" type="button" data-figure="assets/historical_ci.png" data-figure-title="Historical concept identification across eight economic dimensions">View historical diagnostics<svg class="icon" aria-hidden="true"><use href="#arrow" /></svg></button></article>
+          </div>
+        </div>
+      </section>
+
+      <section class="section" id="results" aria-labelledby="results-title">
+        <div class="container">
+          <div class="section-heading"><div><p class="section-number">04 / The results</p><h2 id="results-title">Explore the capability profiles.</h2></div><p class="section-description">The complete 16-model evaluation from the paper. Select a column to sort by that capability.</p></div>
+          <div class="results-controls"><label class="filter" for="family-filter">Model family<select id="family-filter"><option value="all">All families</option><option value="OpenAI">OpenAI</option><option value="Anthropic">Anthropic</option><option value="Google">Google</option><option value="Others">Others</option></select></label><p class="results-status" id="results-status" role="status">16 models · sorted by overall, high to low</p></div>
+          <p class="table-help">Scroll across to compare task scores. Model names stay in view.</p>
+          <div class="table-scroll" role="region" aria-label="Model results, scroll horizontally for all task scores" tabindex="0">
+            <table id="results-table">
+              <caption class="sr-only">AER-bench Table 3. Scores in percent, higher is better. Overall confidence intervals use item-level bootstrap resampling.</caption>
+              <thead><tr><th scope="col">Model</th><th scope="col">Family</th><th scope="col" class="metric-heading" aria-sort="descending"><button type="button" data-sort="overall">Overall<svg class="icon" aria-hidden="true"><use href="#sort" /></svg></button></th><th scope="col">95% CI</th><th scope="col" class="metric-heading" aria-sort="none"><button type="button" data-sort="EK" title="Economic Knowledge">EK<svg class="icon" aria-hidden="true"><use href="#sort" /></svg></button></th><th scope="col" class="metric-heading" aria-sort="none"><button type="button" data-sort="LR" title="Literature Review">LR<svg class="icon" aria-hidden="true"><use href="#sort" /></svg></button></th><th scope="col" class="metric-heading" aria-sort="none"><button type="button" data-sort="CI" title="Concept Identification">CI<svg class="icon" aria-hidden="true"><use href="#sort" /></svg></button></th><th scope="col" class="metric-heading" aria-sort="none"><button type="button" data-sort="MG" title="Model Generation">MG<svg class="icon" aria-hidden="true"><use href="#sort" /></svg></button></th><th scope="col" class="metric-heading" aria-sort="none"><button type="button" data-sort="MM" title="Mathematical Modeling">MM<svg class="icon" aria-hidden="true"><use href="#sort" /></svg></button></th><th scope="col" class="metric-heading" aria-sort="none"><button type="button" data-sort="EA" title="Economic Analysis">EA<svg class="icon" aria-hidden="true"><use href="#sort" /></svg></button></th><th scope="col" class="metric-heading" aria-sort="none"><button type="button" data-sort="PA" title="Paper Abstraction">PA<svg class="icon" aria-hidden="true"><use href="#sort" /></svg></button></th></tr></thead>
+              <tbody>
+                <tr data-model="gpt-5.4" data-family="OpenAI" data-overall="75.0" data-ek="73.9" data-lr="56.0" data-ci="58.9" data-mg="85.8" data-mm="92.8" data-ea="81.6" data-pa="76.2"><th scope="row">gpt-5.4</th><td class="provider">OpenAI</td><td class="overall">75.0</td><td class="interval">[74.0, 76.1]</td><td>73.9</td><td class="best">56.0</td><td>58.9</td><td class="best">85.8</td><td class="best">92.8</td><td class="best">81.6</td><td>76.2</td></tr>
+                <tr data-model="claude-4.6-opus" data-family="Anthropic" data-overall="74.0" data-ek="71.5" data-lr="52.5" data-ci="72.7" data-mg="78.1" data-mm="89.4" data-ea="77.7" data-pa="76.1"><th scope="row">claude-4.6-opus</th><td class="provider">Anthropic</td><td class="overall">74.0</td><td class="interval">[73.0, 74.9]</td><td>71.5</td><td>52.5</td><td>72.7</td><td>78.1</td><td>89.4</td><td>77.7</td><td>76.1</td></tr>
+                <tr data-model="claude-3.7-sonnet" data-family="Anthropic" data-overall="73.7" data-ek="67.0" data-lr="50.7" data-ci="73.0" data-mg="81.7" data-mm="88.6" data-ea="78.2" data-pa="76.8"><th scope="row">claude-3.7-sonnet</th><td class="provider">Anthropic</td><td class="overall">73.7</td><td class="interval">[72.8, 74.6]</td><td>67.0</td><td>50.7</td><td class="best">73.0</td><td>81.7</td><td>88.6</td><td>78.2</td><td>76.8</td></tr>
+                <tr data-model="claude-4.6-sonnet" data-family="Anthropic" data-overall="73.4" data-ek="66.7" data-lr="50.6" data-ci="72.9" data-mg="81.8" data-mm="88.8" data-ea="76.9" data-pa="76.3"><th scope="row">claude-4.6-sonnet</th><td class="provider">Anthropic</td><td class="overall">73.4</td><td class="interval">[72.5, 74.3]</td><td>66.7</td><td>50.6</td><td>72.9</td><td>81.8</td><td>88.8</td><td>76.9</td><td>76.3</td></tr>
+                <tr data-model="gpt-5.2" data-family="OpenAI" data-overall="73.0" data-ek="70.8" data-lr="50.3" data-ci="60.5" data-mg="83.6" data-mm="91.5" data-ea="78.2" data-pa="76.4"><th scope="row">gpt-5.2</th><td class="provider">OpenAI</td><td class="overall">73.0</td><td class="interval">[72.1, 74.0]</td><td>70.8</td><td>50.3</td><td>60.5</td><td>83.6</td><td>91.5</td><td>78.2</td><td>76.4</td></tr>
+                <tr data-model="gemini-3.1-pro" data-family="Google" data-overall="71.6" data-ek="76.3" data-lr="47.0" data-ci="72.0" data-mg="70.0" data-mm="89.3" data-ea="72.0" data-pa="74.3"><th scope="row">gemini-3.1-pro</th><td class="provider">Google</td><td class="overall">71.6</td><td class="interval">[70.6, 72.5]</td><td class="best">76.3</td><td>47.0</td><td>72.0</td><td>70.0</td><td>89.3</td><td>72.0</td><td>74.3</td></tr>
+                <tr data-model="gpt-5" data-family="OpenAI" data-overall="71.0" data-ek="74.2" data-lr="47.7" data-ci="46.9" data-mg="84.2" data-mm="91.8" data-ea="78.5" data-pa="73.5"><th scope="row">gpt-5</th><td class="provider">OpenAI</td><td class="overall">71.0</td><td class="interval">[69.9, 72.0]</td><td>74.2</td><td>47.7</td><td>46.9</td><td>84.2</td><td>91.8</td><td>78.5</td><td>73.5</td></tr>
+                <tr data-model="gpt-5.1" data-family="OpenAI" data-overall="70.0" data-ek="67.5" data-lr="48.1" data-ci="51.4" data-mg="82.8" data-mm="89.7" data-ea="75.0" data-pa="75.6"><th scope="row">gpt-5.1</th><td class="provider">OpenAI</td><td class="overall">70.0</td><td class="interval">[69.0, 71.0]</td><td>67.5</td><td>48.1</td><td>51.4</td><td>82.8</td><td>89.7</td><td>75.0</td><td>75.6</td></tr>
+                <tr data-model="kimi-k2.5" data-family="Others" data-overall="69.1" data-ek="68.9" data-lr="47.3" data-ci="58.3" data-mg="71.9" data-mm="87.4" data-ea="76.3" data-pa="73.5"><th scope="row">kimi-k2.5</th><td class="provider">Others</td><td class="overall">69.1</td><td class="interval">[68.0, 70.1]</td><td>68.9</td><td>47.3</td><td>58.3</td><td>71.9</td><td>87.4</td><td>76.3</td><td>73.5</td></tr>
+                <tr data-model="gpt-5-mini" data-family="OpenAI" data-overall="69.0" data-ek="72.2" data-lr="48.1" data-ci="45.1" data-mg="79.2" data-mm="90.8" data-ea="76.8" data-pa="71.1"><th scope="row">gpt-5-mini</th><td class="provider">OpenAI</td><td class="overall">69.0</td><td class="interval">[68.0, 70.0]</td><td>72.2</td><td>48.1</td><td>45.1</td><td>79.2</td><td>90.8</td><td>76.8</td><td>71.1</td></tr>
+                <tr data-model="gemini-3-flash" data-family="Google" data-overall="65.8" data-ek="74.8" data-lr="46.2" data-ci="41.6" data-mg="62.4" data-mm="86.5" data-ea="72.3" data-pa="77.0"><th scope="row">gemini-3-flash</th><td class="provider">Google</td><td class="overall">65.8</td><td class="interval">[64.9, 66.8]</td><td>74.8</td><td>46.2</td><td>41.6</td><td>62.4</td><td>86.5</td><td>72.3</td><td class="best">77.0</td></tr>
+                <tr data-model="glm-5.1" data-family="Others" data-overall="65.5" data-ek="57.9" data-lr="49.0" data-ci="46.3" data-mg="69.5" data-mm="85.4" data-ea="74.8" data-pa="75.8"><th scope="row">glm-5.1</th><td class="provider">Others</td><td class="overall">65.5</td><td class="interval">[64.5, 66.6]</td><td>57.9</td><td>49.0</td><td>46.3</td><td>69.5</td><td>85.4</td><td>74.8</td><td>75.8</td></tr>
+                <tr data-model="gemini-2.5-flash" data-family="Google" data-overall="64.9" data-ek="69.4" data-lr="41.4" data-ci="44.1" data-mg="68.0" data-mm="88.0" data-ea="67.1" data-pa="76.1"><th scope="row">gemini-2.5-flash</th><td class="provider">Google</td><td class="overall">64.9</td><td class="interval">[63.9, 65.9]</td><td>69.4</td><td>41.4</td><td>44.1</td><td>68.0</td><td>88.0</td><td>67.1</td><td>76.1</td></tr>
+                <tr data-model="doubao-seed-1.6" data-family="Others" data-overall="64.8" data-ek="66.0" data-lr="42.2" data-ci="51.4" data-mg="61.5" data-mm="84.9" data-ea="72.7" data-pa="74.7"><th scope="row">doubao-seed-1.6</th><td class="provider">Others</td><td class="overall">64.8</td><td class="interval">[63.8, 65.8]</td><td>66.0</td><td>42.2</td><td>51.4</td><td>61.5</td><td>84.9</td><td>72.7</td><td>74.7</td></tr>
+                <tr data-model="qwen3-vl-32b-instruct" data-family="Others" data-overall="61.3" data-ek="60.9" data-lr="39.1" data-ci="48.0" data-mg="59.4" data-mm="82.0" data-ea="66.2" data-pa="73.5"><th scope="row">qwen3-vl-32b-instruct</th><td class="provider">Others</td><td class="overall">61.3</td><td class="interval">[60.3, 62.3]</td><td>60.9</td><td>39.1</td><td>48.0</td><td>59.4</td><td>82.0</td><td>66.2</td><td>73.5</td></tr>
+                <tr data-model="gpt-4o" data-family="OpenAI" data-overall="54.0" data-ek="25.6" data-lr="39.5" data-ci="52.3" data-mg="45.7" data-mm="78.4" data-ea="64.6" data-pa="72.1"><th scope="row">gpt-4o</th><td class="provider">OpenAI</td><td class="overall">54.0</td><td class="interval">[53.1, 55.0]</td><td>25.6</td><td>39.5</td><td>52.3</td><td>45.7</td><td>78.4</td><td>64.6</td><td>72.1</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="table-notes"><p>Scores and 95% confidence intervals are reproduced from Table 3 of the submitted paper. Each task contributes equally to the overall score. Underlined task values are the highest reported point estimates; they do not imply statistical separation.</p><p>GPT-5.4 (75.0%) and Claude 4.6 Opus (74.0%) are statistically indistinguishable in the paired bootstrap test (p = 0.099). This table reports tool-free foundation-model baselines.</p></div>
+        </div>
+      </section>
+
+      <section class="section resources" id="resources" aria-labelledby="resources-title">
+        <div class="container resource-layout">
+          <div><p class="section-number">05 / Read &amp; cite</p><h2 id="resources-title">Take a closer look.</h2><p class="description">Read the full methodology, evaluation rubrics, confidence intervals, and robustness analysis in the paper.</p><div class="resource-links"><a class="button" href="../static/uploads/AER_bench.pdf" type="application/pdf"><svg class="icon" aria-hidden="true"><use href="#paper" /></svg>Paper PDF <small>1.2 MB</small></a><a class="button" href="../static/uploads/AER_bench_slides_en.pdf" type="application/pdf" hreflang="en"><svg class="icon" aria-hidden="true"><use href="#slides" /></svg>English slides <small>0.4 MB</small></a></div></div>
+          <div><div class="citation-head"><h3>Cite this working paper</h3><button class="copy-button" id="copy-citation" type="button"><svg class="icon" aria-hidden="true"><use href="#copy" /></svg><span>Copy BibTeX</span></button></div><pre><code id="citation">@misc{wang2026aerbench,
+  title = {Can Foundation Models Really Understand
+    Economic Research? A Pipeline-Level Benchmark
+    for Agentic Research Systems},
+  author = {Wang, Chiyuan and Kang, Ying and
+    Zhang, Peiyuan and Deng, Xiaotie and
+    Yang, Yaodong and Zhang, Linfeng and Li, Bo},
+  year = {2026},
+  url = {https://wangchiyuan.com/aer-bench/}
+}</code></pre><p class="copy-status" id="copy-status" role="status"></p></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="container footer"><p>AER-bench · Agentic Economic Research<br />A research project by Chiyuan Wang and collaborators.</p><a href="../">Personal homepage<svg class="icon" aria-hidden="true"><use href="#external" /></svg></a></footer>
+    <dialog id="figure-viewer" aria-labelledby="figure-title"><div class="dialog-header"><h2 id="figure-title">Research figure</h2><a class="text-link" id="figure-original" target="_blank" rel="noopener noreferrer">Open original<svg class="icon" aria-hidden="true"><use href="#external" /></svg></a><button class="dialog-close" type="button" aria-label="Close enlarged figure"><svg class="icon" aria-hidden="true"><use href="#close" /></svg></button></div><img class="dialog-image" id="figure-image" alt="" /></dialog>
+  </body>
+</html>

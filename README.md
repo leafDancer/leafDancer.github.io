@@ -8,6 +8,7 @@ Personal academic website for [Chiyuan Wang](https://wangchiyuan.com/) — stati
 - **`css/style.css`** — Typography (Playfair Display + Spectral + JetBrains Mono), colors, layout.
 - **`static/coauthor_infos.json`** — Map `"Author Name"` → homepage URL. Wrap a name in `index.html` with `<span class="coauthor-name" data-coauthor="Author Name">Author Name</span>` and the page script turns it into a link automatically.
 - **`static/uploads/`** — Photos, PDFs, `pku_icon.png`, etc.
+- **`aer-bench/`** — AER-bench project page at `/aer-bench/`. `index.html` contains the paper summary, authors, citations, and all 16 model result rows; `script.js` handles the task explorer, result sorting/filtering, figure viewer, and citation copy; `style.css` is scoped to this page. Original paper figures live in `assets/`; self-hosted fonts and their SIL Open Font Licenses live in `assets/fonts/`.
 
 ## Preview locally
 

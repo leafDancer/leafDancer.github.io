@@ -32,6 +32,7 @@ jobs:
           cp css/style.css public/css/
           mkdir -p public/static
           cp -r static/. public/static/
+          cp -r aer-bench public/
           if [ -f google57f470f04652bf67.html ]; then cp google57f470f04652bf67.html public/; fi
 
       - name: Upload artifact
